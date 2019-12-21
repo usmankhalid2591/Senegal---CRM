@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="utf-8">
+
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <meta name="csrf-token" content="K0WggtqMTw0TrR9kXRJDlJV3oaxPFXlCScXa7Ro9">
+    <link rel="icon" href="https://senegal-v2.dynamologic.com/assets/image/favicon.ico?v=1.0.4" type="image/x-icon">
+    <link href="Calendar_files/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="Calendar_files/tempusdominus-bootstrap-4.css">
+
+
+    <link href="Calendar_files/main_003.css" rel="stylesheet">
+<link href="Calendar_files/main_002.css" rel="stylesheet">
+<link href="Calendar_files/main.css" rel="stylesheet">
+<link href="Calendar_files/jquery-ui.css" rel="stylesheet">
+
+
+    <link href="Calendar_files/pace.css" rel="stylesheet" type="text/css">
+    <link href="Calendar_files/style-new.css" rel="stylesheet" type="text/css">
+    <link href="Calendar_files/style.css" rel="stylesheet" type="text/css">
+    <link href="Calendar_files/all.css" rel="stylesheet" type="text/css">
+    <link href="Calendar_files/css.css" rel="stylesheet">
+    <link href="Calendar_files/my.css" rel="stylesheet" type="text/css">
+
+    <title> Calendar
+        | Senegal</title>
+    <script> var rootUrl = 'https://senegal-v2.dynamologic.com/index.php'</script>
+    <script src="Calendar_files/jquery-3.js"></script>
+    <script src="Calendar_files/crm.js"></script>
+
+
+
+    <script src="Calendar_files/flexmenu.js"></script>
+    <script src="Calendar_files/angular.js"></script>
+    <script src="Calendar_files/angular-sanitize.js"></script>
+    <script src="Calendar_files/pace.js"></script>
+    <script src="Calendar_files/popper.js"></script>
+    <script src="Calendar_files/bootstrap.js"></script>
+    <script type="text/javascript" src="Calendar_files/moment.js"></script>
+    <script type="text/javascript" src="Calendar_files/tempusdominus-bootstrap-4.js"></script>
+
+    <script src="Calendar_files/ng-google-chart.js" type="text/javascript"></script>
+
+    <script src="Calendar_files/angular-drag-and-drop-lists.js"></script>
+    <script src="Calendar_files/ckeditor.js"></script><style>.cke{visibility:hidden;}</style>
+    <script src="Calendar_files/angular-ckeditor.js"></script>
+    <script type="text/javascript" src="Calendar_files/jsvalidation.js"></script>
+    <script src="Calendar_files/ng-validate.js"></script>
+    <script src="Calendar_files/crm-app.js"></script>
+    <script src="Calendar_files/crm-common-app.js"></script>
+    <script src="Calendar_files/headerController.js"></script>
+        <script>
+      var calendar = {};
+      document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+          calendar = new FullCalendar.Calendar(calendarEl, {
+              plugins : [
+                  'interaction', 'dayGrid', 'timeGrid'
+              ],
+              header : {
+                  left : 'prev,next today',
+                  center : 'title',
+                  right : 'dayGridMonth,timeGridWeek,timeGridDay,monthGridWeek'
+              },
+              views : {
+                  dayGridMonth : {// name of view
+                      titleFormat : {
+                          year : 'numeric',
+                          month : 'long'
+                      }, //calendar top header i.e "August 2019"
+                      columnHeaderFormat : {
+                          weekday : 'long'
+                      }, //each cell title Sunday Monday etc..
+                      // other view-specific options here
+                  },
+                  week : {
+                      year : 'long',
+                      month : 'long',
+                      day : 'numeric'
+                  }
+              },
+              loading : function(isLoading, view) {
+                  if (isLoading) {// isLoading gives boolean value
+                      //show your loader here 
+                      console.log('yes loading the data ');
+                  } else {
+                      //hide your loader here
+                      console.log('loading complete');
+                  }
+              },
+              defaultDate : '2019-12-12',
+              navLinks : true, // can click day/week names to navigate views
+              selectable : true,
+              selectMirror : true,
+              select : function(arg) {
+                  var startDateTime = moment(arg.start.toISOString()).format('YYYY-MM-DD HH:mm:ss');
+                  var endDateTime = moment(arg.end.toISOString()).format('YYYY-MM-DD HH:mm:ss');
+                  var eventData = {
+                      id : -1,
+                      status : 'New',
+                      event_type : '',
+                      start : startDateTime,
+                      end : endDateTime,
+                      color : '',
+                  };
+                  showEventPopup(eventData);
+                  calendar.unselect();
+              },
+              eventClick : function(info) {
+
+//                  $('#modalTitle').html(event.title);
+//                  $('#modalBody').html(event.description);
+//                  $('#eventUrl').attr('href', event.url);
+//                  $('#fullCalModal').modal();
+
+//                  console.log(' click event : ',info);
+//                  start = info.event.start.toISOString();
+//                  end = info.event.end.toISOString();
+//                  id = info.event.id;
+//                  module = info.event.extendedProps.moduleName;
+//                  var startDateTime = moment(info.event.start.toISOString()).format('YYYY-MM-DD HH:mm:ss');
+//                  var endDateTime = moment(info.event.end.toISOString()).format('YYYY-MM-DD HH:mm:ss');
+//                  var eventData = {
+//                      id : id,
+//                      status : 'New',
+//                      moduleName : module,
+//                      start : startDateTime,
+//                      end : endDateTime,
+//                      color : '',
+//                  };
+//                  showEventPopup(eventData);
+              }
+
+              ,
+              editable : true,
+              eventLimit : true, // allow "more" link when too many events
+              events : {
+                  url : "https://senegal-v2.dynamologic.com/index.php/Calendar/calendar-data",
+                  failure : function() {
+                      document.getElementById('script-warning').style.display = 'inline'; // show
+                  }
+              },
+              timeZone : 'Asia/Karachi',
+              eventDrop : function(info) {
+                  data = {
+                      startDateTime : info.event.start.toISOString(),
+                      endDateTime : info.event.end.toISOString(),
+                      id : info.event.id
+                  };
+                  draggDropEvent(data);
+              },
+              dateClick : function(arg) {
+                  console.log(arg.date.toString()); // use *local* methods on the native Date Object
+                  // will output something like 'Sat Sep 01 2018 00:00:00 GMT-XX:XX (Eastern Daylight Time)'
+              },
+//              eventTimeFormat : {
+//                  hour : 'numeric',
+//                  minute : '2-digit',
+//                  timeZoneName : 'short'
+//              },
+
+              height : 'auto',
+              eventRender : function(info) {
+                  var tooltip = new Tooltip(info.el, {
+                      title : info.event.extendedProps.toolTipHtml,
+                      placement : 'top',
+                      trigger : 'click',
+                      container : 'body',
+                      html : true, // true html tags'll be rendered on display.
+                      closeOnClickOutside : true,
+                  });
+              },
+//                       eventAfterRender : function(event, element) {
+//                           $(element).tooltip({
+//                                    title : event.title,
+//                                    container : "body"
+//                              });
+//                           }
+          });
+          calendar.render();
+      });
+</script>
+<script>
+
+      window.onload = function() {
+          $('.fc-prev-button').before('<div class="d-flex align-items-center"><span class="form-control advanced_filter mr-3 cursor_pointer min_w_auto"><i class="fal fa-sliders-h mr-2"></i> Filters</span></div>');
+//          setTimeout(function() {
+//          }, 1000);
+      };
+      $(document).click(function(event) {
+          $target = $(event.target);
+          if (!$target.closest('.filter_option_click').length && !$target.closest('.filter_options').length && $('.dropdown_filter_options').is(":visible")) {
+              $('.dropdown_filter_options').hide();
+              $('.dropdown_filter_options').removeClass('active');
+          }
+      });
+      $(document).ready(function() {
+          $('body').on('click', '.advanced_filter', function() {
+               $(".advanced_search").toggleClass("open");
+          });
+          $('body').on('click', '.search_close', function() {
+               $(".advanced_search").removeClass("open");
+          });
+
+          $('body').on('click', '.calendar_filters input', function() {
+              checkClickFunction($(this))
+          });
+
+          $('body').on('click', '.right_icons .fa-edit', function() {
+              var jsonE = $(this).parents('.dialog_box_wrap').attr('box-json');
+              jsonE = JSON.parse(jsonE);
+              $('div[id^=tooltip_]').attr("aria-hidden", "true").css("visibility", "hidden");
+              showEventPopup(jsonE);
+          });
+
+          $('body').on('click', '.newEventContinueBtn', function(event) {
+
+              eventData = {
+                  id : '0',
+                  status : 'New',
+                  moduleName : $('#moduleName').val(),
+                  start : $('#eventStartDateTime').val(),
+                  end : $('#eventEndDateTime').val(),
+                  color : '',
+              };
+              showEventPopup(eventData);
+          });
+          $('body').on('click', '.filter_option_click', function() {
+              $('.dropdown_filter_options').hide();
+              var thisParent = $(this).parents('.parent_filter_list');
+              var childDiv = thisParent.find('.dropdown_filter_options');
+              if (childDiv.hasClass('active')) {
+                  childDiv.removeClass('active');
+                  childDiv.hide();
+              } else {
+                  $('.dropdown_filter_options').removeClass('active');
+                  childDiv.show();
+                  childDiv.addClass('active');
+              }
+          });
+      });
+
+      function draggDropEvent(data) {
+
+          $.ajax({
+              type : 'POST',
+              url : "https://senegal-v2.dynamologic.com/index.php/Calendar/calendar-drag-drop",
+              data : {
+                  _token : 'K0WggtqMTw0TrR9kXRJDlJV3oaxPFXlCScXa7Ro9',
+                  data : data,
+              },
+              dataType : 'json',
+              success : function(returnedData) {
+                  console.log('Event positioning updated');
+              },
+              error : function(jqXHR, textStatus, errorThrown) {
+                  console.log('ErrorResposne: There is so error plz check in getting html. ', jqXHR);
+              },
+          });
+      }
+
+      function showEventPopup(data) {
+
+          $.ajax({
+              type : 'POST',
+              url : "https://senegal-v2.dynamologic.com/index.php/Calendar/calendar-modify",
+              data : {
+                  _token : 'K0WggtqMTw0TrR9kXRJDlJV3oaxPFXlCScXa7Ro9',
+                  data : data
+              },
+              dataType : 'json',
+              success : function(returnedData) {
+                  if (returnedData.code == 200) {
+                      $('#eventDataModal .modal-title').html(returnedData.heading);
+                      $('#eventDataModal .modal-body').html(returnedData.body);
+                      $('#eventDataModal').modal('show');
+                  } else {
+                      console.log(' There is so error plz check in getting html. ');
+                  }
+              },
+              error : function(jqXHR, textStatus, errorThrown) {
+                  console.log('ErrorResposne: There is so error plz check in getting html. ', jqXHR);
+              },
+          });
+      }
+
+      function checkClickFunction($this) {
+          var filterName = $this.attr('filter_name');
+          var $thisClass = filterName + '_' + $this.val();
+          if ($this.is(':checked')) {
+              if ($this.val() == 'ShowAll') {
+                  applyCheckToCurrentFilterOptions(filterName, 'check_all');
+              } else {
+                  checkUnCheckTheShowAllCheck(filterName, 'checked');
+                  showFilteredElement($thisClass);
+                  checkAllOptionFor(filterName);
+              }
+          } else {
+              if ($this.val() == 'ShowAll') {
+                  applyCheckToCurrentFilterOptions(filterName, 'uncheck_all');
+              } else {
+                  checkUnCheckTheShowAllCheck(filterName, 'unchecked'); //top showAll check uncheck
+                  hideFilteredElement($thisClass);
+              }
+          }
+      }
+
+
+      function checkUnCheckTheShowAllCheck(filterName, value) {
+          if (value == 'unchecked') {
+              $('.' + filterName + '_ShowAll').prop('checked', false)
+          }
+
+      }
+
+      function applyCheckToCurrentFilterOptions(filterName, value) {
+          if (value == 'check_all') {
+              $("input[filter_name='" + filterName + "']").each(function(index, obj) {
+                  $(obj).prop('checked', true);
+                  var $thisClass = filterName + '_' + $(obj).val();
+                  showFilteredElement($thisClass);
+              });
+          } else {
+              $("input[filter_name='" + filterName + "']").each(function(index, obj) {
+                  $(obj).prop('checked', false);
+                  var $thisClass = filterName + '_' + $(obj).val();
+                  hideFilteredElement($thisClass);
+              });
+          }
+
+      }
+
+      function checkAllOptionFor(thisModuleName) {
+          var currentCheck = 0;
+          // var thisModuleName  = 'Shifts' ;
+          var totalCheckBox = $('input[filter_name=' + thisModuleName + ']').length - 1;
+          var thisParentCheckAll = thisModuleName + '_ShowAll';
+
+          $('input[filter_name=' + thisModuleName + ']').each(function(e) {
+              if ($(this).is(':checked')) {
+                  currentCheck++;
+                  if (currentCheck == totalCheckBox) {
+                      $('#' + thisParentCheckAll).prop('checked', true);
+                  }
+              }
+          });
+      }
+
+      function hideFilteredElement(element) {
+          $('a.' + element).hide();
+      }
+      function showFilteredElement(element) {
+          $('a.' + element).show();
+      }
+
+      /*
+       * 
+       * @param  {type} eventsss
+       * @returns  {undefined}
+       */
+      function getTimelineData(eventData, postDataObject) {
+//                  resetModalViews();
+          if (postDataObject == false) {
+              var aptData = 0;
+              if (eventData.id != 0 && appointmentsData[eventData.id].length > 0) {
+                  aptData = appointmentsData[eventData.id]
+              }
+              event_type = eventData.event_type;
+              var objectTimeLine = {
+                  id : eventData.id,
+                  title : eventData.title,
+                  status : eventData.status,
+                  start : eventData.start._i,
+                  end : eventData.end._i,
+                  event_type : eventData.moduleName,
+                  page_type : calendarType
+              };
+          } else {
+              var objectTimeLine = eventData;
+              objectTimeLine.page_type = calendarType;
+          }
+
+          var event_type = eventData.event_type;
+          var event_id = eventData.id;
+          current_event_type = objectTimeLine.event_type;
+          current_event_id = objectTimeLine.id;
+          if (templClicked == false) {//without click don't call the function
+              templClicked = true;
+              $.ajax({
+                  type : 'POST',
+                  url : baseURL + '/time_line',
+                  data : {
+                      data : objectTimeLine
+                  },
+                  dataType : 'json',
+                  success : function(returnedData) {
+                      templClicked = false;
+                      editEventsPopupdataData = returnedData;
+                      calLogReturnHtml = returnedData.calLogHtml;
+                      aptLogReturnHtml = returnedData.appointmentHtml;
+                      viewLogReturnHtml = returnedData.viewingHtml;
+                      $('#timeline_tab').html(returnedData.timeLineHtml);
+                      $('#reoccurenceTab3').html(returnedData.reoccurrenceHtml);
+                      this.checkAndShowAppointmentOrCallLog(event_type);
+                      $('#ModalEdit').modal('show');
+                  },
+                  error : function(jqXHR, textStatus, errorThrown) {
+                      console.log("Timeline response is in error kindly check.(js_script.)");
+                      $('#timeline_tab').html(jqXHR.responseText);
+                  },
+                  checkAndShowAppointmentOrCallLog : function(chkType) {
+                      if (chkType == 'apt_log' || chkType == 'viewing_log') {
+                          $('#radio_meeting').trigger('click'); // On click event already defined to show appointment box and hide call log
+                          $('#radio_call').attr('disabled', true);
+                      } else if (chkType == 'cal_log') {
+                          $('#radio_call').trigger('click'); // On click event already defined to show call log box and hide appointment log
+                          $('#radio_meeting').attr('disabled', true);
+                      } else {
+                          $('#radio_meeting').trigger('click');
+                      }
+                  }
+              });
+          }
+      }
+</script>    <style>
+
+    .clear{clear: both} 
+    .Jobs{background:#f7bf60;}
+    .Shifts{background:#f17630;}
+    .Milestones{background:#4897f3;}
+    .Shipments{background:#8181ff;}
+    .Campaigns{background:#0ab66e;}
+
+    .popper,
+    .tooltip {
+        position: absolute;
+        z-index: 9999;
+        color: black;
+        width: 150px;
+        border-radius: 3px;
+        box-shadow: 0 0 2px rgba(0,0,0,0.5);
+        text-align: center;
+        opacity: 1 !important;
+        width: 250px;
+    }
+    .style5 .tooltip {
+        background: #1E252B;
+        color: #FFFFFF;
+        max-width: 200px;
+        width: auto;
+        font-size: .8rem;
+        padding: .5em 1em;
+    }
+    .popper .popper__arrow,
+    .tooltip .tooltip-arrow {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        position: absolute;
+        margin: 5px;
+    }
+
+    .tooltip .tooltip-arrow,
+    .popper .popper__arrow {
+        border-color: #FFC107;
+    }
+    .style5 .tooltip .tooltip-arrow {
+        border-color: #1E252B;
+        display: none;
+    }
+    .popper[x-placement^="top"],
+    .tooltip[x-placement^="top"] {
+        margin-bottom: 5px;
+    }
+    .popper[x-placement^="top"] .popper__arrow,
+    .tooltip[x-placement^="top"] .tooltip-arrow {
+        border-width: 5px 5px 0 5px;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        bottom: -5px;
+        left: calc(50% - 5px);
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .popper[x-placement^="bottom"],
+    .tooltip[x-placement^="bottom"] {
+        margin-top: 5px;
+    }
+    .tooltip[x-placement^="bottom"] .tooltip-arrow,
+    .popper[x-placement^="bottom"] .popper__arrow {
+        border-width: 0 5px 5px 5px;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        top: -5px;
+        left: calc(50% - 5px);
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .tooltip[x-placement^="right"],
+    .popper[x-placement^="right"] {
+        margin-left: 5px;
+    }
+    .popper[x-placement^="right"] .popper__arrow,
+    .tooltip[x-placement^="right"] .tooltip-arrow {
+        border-width: 5px 5px 5px 0;
+        border-left-color: transparent;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        left: -5px;
+        /*top: calc(50% - 5px);*/
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .popper[x-placement^="left"],
+    .tooltip[x-placement^="left"] {
+        margin-right: 5px;
+    }
+    .popper[x-placement^="left"] .popper__arrow,
+    .tooltip[x-placement^="left"] .tooltip-arrow {
+        border-width: 5px 0 5px 5px;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        right: -5px;
+        top: calc(50% - 5px);
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .tooltip{
+        top: 5px !important;
+
+    } 
+    .tooltip-inner{
+        background: transparent;
+        max-width: 100%;
+        padding: 0px;
+        overflow: hidden;
+    }
+    
+     .box_color_Archived { background: #3d45da;} .box_color_Assigned { background: #0ff5b5;} .box_color_Booked { background: #5fcd90;} .box_color_Open { background: #ef9fbd;} .box_color_Pending_Billing { background: #10b433;} .box_color_Archived { background: #97d111;} .box_color_Assigned { background: #7303ee;} .box_color_Booked { background: #9c714a;} .box_color_Open { background: #f192f5;} .box_color_Pending_Billing { background: #d620b3;} .box_color_Complete { background: #9eb8ca;} .box_color_In_Progress { background: #7a98b9;} .box_color_Delivered { background: #032f2b;} .box_color_In_transit { background: #97026e;} .box_color_Shipped { background: #35b049;} .box_color_Draft { background: #16f116;} .box_color_Live { background: #b48cff;}
+
+</style>
+
+    <style>
+        :root {
+            --main-color: #690             !important;
+        }
+    </style>
+
+<link href="fonts/css/all.css" rel="stylesheet" type="text/css">
+</head>
+
+<body ng-app="crmApp" class="crm  ng-scope pace-done"><div class="pace  pace-inactive"><div class="pace-progress" style="transform: translate3d(100%, 0px, 0px);" data-progress-text="100%" data-progress="99">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+    <div ng-controller="headerController" class="ng-scope">
+    <header>
+        <nav class="navbar navbar-expand">
+            <div class="container-fluid pl-0">
+                <a class="logo" href="https://senegal-v2.dynamologic.com/index.php/dashboard">
+                    <img src="Calendar_files/Logo.svg">
+                </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="far fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav mr-auto">
+                                                    <li class="nav-item">
+                                <a class=" nav-link  " href="https://senegal-v2.dynamologic.com/index.php/CRM/dashboard">
+                                    CRM
+                                </a>
+                            </li>
+                                                    <li class="nav-item">
+                                <a class=" nav-link  " href="https://senegal-v2.dynamologic.com/index.php/MARKETING/dashboard">
+                                    MARKETING
+                                </a>
+                            </li>
+                                                    <li class="nav-item">
+                                <a class=" nav-link  " href="https://senegal-v2.dynamologic.com/index.php/HIRE/dashboard">
+                                    HIRE
+                                </a>
+                            </li>
+                                                    <li class="nav-item">
+                                <a class=" nav-link  " href="https://senegal-v2.dynamologic.com/index.php/WORK/dashboard">
+                                    WORK
+                                </a>
+                            </li>
+                                                    <li class="nav-item">
+                                <a class=" nav-link  " href="https://senegal-v2.dynamologic.com/index.php/FINANCE/dashboard">
+                                    FINANCE
+                                </a>
+                            </li>
+                                                    <li class="nav-item">
+                                <a class=" nav-link  " href="https://senegal-v2.dynamologic.com/index.php/PROJECTS/dashboard">
+                                    PROJECTS
+                                </a>
+                            </li>
+                                                    <li class="nav-item">
+                                <a class=" nav-link  " href="https://senegal-v2.dynamologic.com/index.php/LOGISTICS/dashboard">
+                                    LOGISTICS
+                                </a>
+                            </li>
+                                            </ul>
+
+
+                    <div class="top_right d-flex align-items-center">
+                        <ul>
+                                                            <li title="Search for anything">
+
+                                    <div class="search_input dropdown">
+                                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="search" placeholder="Search" ng-model="search" route="https://senegal-v2.dynamologic.com/index.php/search" ng-keydown="globalSearch($event)" data-toggle="dropdown">
+                                        <i class="fal fa-search top_search"></i>
+                                    </div>
+                                </li>
+                            
+                                                            <li class="dropdown header_dropdown " title="Create anything">
+                                    <a href="unsafe:javascript:void(0);" id="createAction" data-toggle="dropdown" aria-expanded="true">
+                                        <i class="fal fa-plus-circle"></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-item dropdown-submenu">
+    <a href="#" data-toggle="dropdown">CRM <i class="fal fa-chevron-right ml-2"></i></a>
+    <ul class="dropdown-menu">
+       <li class="dropdown-item">
+    <a name="quickcreate" data-module="Leads" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Lead</a>
+</li>
+<li class="dropdown-item">
+    <a name="quickcreate" data-module="Companies" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Company</a>
+</li>
+<li class="dropdown-item">
+    <a name="quickcreate" data-module="Contacts" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Contact</a>
+</li>
+<li class="dropdown-item">
+    <a name="quickcreate" data-module="Opportunities" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Opportunity</a>
+</li>
+
+    </ul>
+</li>
+<li class="dropdown-item dropdown-submenu">
+    <a href="#" data-toggle="dropdown">MARKETING <i class="fal fa-chevron-right ml-2"></i></a>
+    <ul class="dropdown-menu">
+       <li class="dropdown-item">
+    <a name="quickcreate" data-module="Campaigns" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Campaign</a>
+</li>
+<li class="dropdown-item">
+    <a name="quickcreate" data-module="SocialPosting" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Social Post</a>
+</li>
+
+    </ul>
+</li>
+<li class="dropdown-item dropdown-submenu">
+    <a href="#" data-toggle="dropdown">HIRE <i class="fal fa-chevron-right ml-2"></i></a>
+    <ul class="dropdown-menu">
+       <li class="dropdown-item">
+    <a name="quickcreate" data-module="JobPosts" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Job Post</a>
+</li>
+<li class="dropdown-item">
+    <a name="quickcreate" data-module="JobApplicants" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Applicant</a>
+</li>
+
+    </ul>
+</li>
+<li class="dropdown-item dropdown-submenu">
+    <a href="#" data-toggle="dropdown">WORK <i class="fal fa-chevron-right ml-2"></i></a>
+    <ul class="dropdown-menu">
+       <li class="dropdown-item">
+    <a name="quickcreate" data-module="Programs" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Program</a>
+</li>
+<li class="dropdown-item">
+    <a name="quickcreate" data-module="Jobs" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Job</a>
+</li>
+<li class="dropdown-item">
+    <a name="quickcreate" data-module="Shifts" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Shift</a>
+</li>
+<li class="dropdown-item">
+    <a name="quickcreate" data-module="RecapTemplates" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Recap Template</a>
+</li>
+<li class="dropdown-item">
+    <a name="quickcreate" data-module="TalentGroups" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Talent Group</a>
+</li>
+<li class="dropdown-item">
+    <a name="quickcreate" data-module="TalentPreviews" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Talent Preview</a>
+</li>
+
+    </ul>
+</li>
+<li class="dropdown-item dropdown-submenu">
+    <a href="#" data-toggle="dropdown">FINANCE <i class="fal fa-chevron-right ml-2"></i></a>
+    <ul class="dropdown-menu">
+       <li class="dropdown-item">
+    <a name="quickcreate" data-module="Estimates" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Estimate</a>
+</li>
+<li class="dropdown-item">
+    <a name="quickcreate" data-module="Proposals" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Proposal</a>
+</li>
+<li class="dropdown-item">
+    <a name="quickcreate" data-module="Invoices" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Invoice</a>
+</li>
+
+    </ul>
+</li>
+<li class="dropdown-item dropdown-submenu">
+    <a href="#" data-toggle="dropdown">PROJECTS <i class="fal fa-chevron-right ml-2"></i></a>
+    <ul class="dropdown-menu">
+       <li class="dropdown-item">
+    <a name="quickcreate" data-module="Projects" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Project</a>
+</li>
+
+    </ul>
+</li>
+<li class="dropdown-item dropdown-submenu">
+    <a href="#" data-toggle="dropdown">LOGISTICS <i class="fal fa-chevron-right ml-2"></i></a>
+    <ul class="dropdown-menu">
+       <li class="dropdown-item">
+    <a name="quickcreate" data-module="Shipping" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Shipping</a>
+</li>
+<li class="dropdown-item">
+    <a name="quickcreate" data-module="Inventory" class=" crmcreatebutton" data-createtype="quickcreate" data-toggle="modal" data-target="#createrecord" data-record="-1">Inventory</a>
+</li>
+
+    </ul>
+</li>
+
+                                    </ul>
+                                </li>
+                            
+
+                                                            <li title="Use Calendar">
+                                    <a href="https://senegal-v2.dynamologic.com/index.php/Calendar"><i class="fal fa-calendar-alt"></i></a>
+                                </li>
+                            
+
+
+
+                                                            <li class="position-relative" title="Read Notifications">
+                                    <a href="unsafe:javascript:void(0);" id="notification" route="https://senegal-v2.dynamologic.com/index.php/notification" ng-click="topNotification($event)">
+                                        <i class="fal fa-bell"></i>
+                                        <span class="bell_number">7</span>
+                                    </a>
+                                </li>
+                            
+
+                                                            <li title="Create Reports">
+                                    <a href="https://senegal-v2.dynamologic.com/index.php/Reports/list"><i class="fal fa-file-alt"></i></a>
+                                </li>
+                            
+
+
+                                                            <li title="Create Workflow">
+                                    <a href="https://senegal-v2.dynamologic.com/index.php/Workflows/create"><i class="fal fa-poll-h"></i></a>
+                                </li>
+                            
+
+                        </ul>
+                        <div class="user_box  dropdown">
+                            <div class="dropdown-toggle d-flex align-items-center cursor_pointer" data-toggle="dropdown">
+                                <span class="user_img mr-2"><i class="far fa-user-tie"></i></span>
+                            </div>
+                            <div class="dropdown-menu">
+
+                                <a class="dropdown-item border_btm" href="unsafe:javascript:void(0);"><b> John Doe</b></a>
+                                <a class="dropdown-item" href="https://senegal-v2.dynamologic.com/index.php/settings/general"> System Settings</a>
+                                <a class="dropdown-item" href="https://senegal-v2.dynamologic.com/index.php/account-settings/account-information"> Account Settings</a>
+                                <a class="dropdown-item" href="https://senegal-v2.dynamologic.com/index.php/account-settings/sync-email"> Email Integration</a>
+                                <a class="dropdown-item" href="https://senegal-v2.dynamologic.com/index.php/email/inbox"> My Inbox</a>
+                                <a class="dropdown-item" href="https://senegal-v2.dynamologic.com/index.php/my-tasks"> My Tasks</a>
+
+                                <a class="dropdown-item" href="https://senegal-v2.dynamologic.com/index.php/logout" onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();
+                                      var stateObj = {foo: 'bar'};
+                                      history.pushState(stateObj, 'page 2', '/');">
+                                    Sign Out
+                                </a>
+
+                                <form id="logout-form" action="https://senegal-v2.dynamologic.com/index.php/logout" method="POST" style="display: none;" class="ng-pristine ng-valid">
+                                    <input type="hidden" name="_token" value="K0WggtqMTw0TrR9kXRJDlJV3oaxPFXlCScXa7Ro9" autocomplete="off">
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="global_search">
+        <span class="search_close"><i class="far fa-times-circle"></i></span>
+        <div class="border_1px">
+            <div ng-bind-html="searchHtml" class="ng-binding"></div>
+        </div>
+    </div>
+
+</div>
+
+
+    <section>
+        <div class="d-flex">
+    <div class="advanced_search bg_gray vh-100 open">
+    <span class="search_close"><i class="far fa-times-circle"></i></span>
+    <div class="p-3">
+
+        
+        <div class="calendar_filters mb-3 pb-3 border_btm mt-5">
+            <ul class="main_filter_listing d-block">
+                                                <li class="filters parent_filter_list position-relative mb-3" filter_name="Jobs"> 
+                    <div class="filters"> 
+                        <!--<span class="tr_box mt-0 mr-2 Jobs"></span>-->
+                        <span class="weight_600">Jobs</span> 
+                        <div class="position-relative w-100  ml-3">
+                            <span class="filter_option_click w-100 ml-0 mr-0">
+                                <span class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="filter_options custom-control-input Jobs_ShowAll" id="Jobs_ShowAll" value="ShowAll" name="color_box_ShowAll[]" filter_name="Jobs" checked="checked" is_checked']}}'="">
+                                    <label class="custom-control-label cursor_pointer" for="Jobs_ShowAll">All</label>
+                                </span> 
+                                <i class="far fa-angle-down"></i>
+                            </span>
+                            <ul class="filter_options dropdown_filter_options left_0"> 
+                          
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="filter_options custom-control-input Jobs_Assigned" id="Jobs_Assigned" value="Assigned" name="color_box_Assigned[]" filter_name="Jobs" checked="checked" is_checked']}}'="">
+                                        <label class="custom-control-label" for="Jobs_Assigned">Assigned</label>
+                                    </div>
+                                    <span class="tr_box mt-0 mr-2 Jobs box_color_Assigned"></span>
+                                </li> 
+                                  
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="filter_options custom-control-input Jobs_Booked" id="Jobs_Booked" value="Booked" name="color_box_Booked[]" filter_name="Jobs" checked="checked" is_checked']}}'="">
+                                        <label class="custom-control-label" for="Jobs_Booked">Booked</label>
+                                    </div>
+                                    <span class="tr_box mt-0 mr-2 Jobs box_color_Booked"></span>
+                                </li> 
+                                  
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="filter_options custom-control-input Jobs_Open" id="Jobs_Open" value="Open" name="color_box_Open[]" filter_name="Jobs" checked="checked" is_checked']}}'="">
+                                        <label class="custom-control-label" for="Jobs_Open">Open</label>
+                                    </div>
+                                    <span class="tr_box mt-0 mr-2 Jobs box_color_Open"></span>
+                                </li> 
+                                  
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="filter_options custom-control-input Jobs_Pending_Billing" id="Jobs_Pending_Billing" value="Pending_Billing" name="color_box_Pending_Billing[]" filter_name="Jobs" checked="checked" is_checked']}}'="">
+                                        <label class="custom-control-label" for="Jobs_Pending_Billing">Pending Billing</label>
+                                    </div>
+                                    <span class="tr_box mt-0 mr-2 Jobs box_color_Pending_Billing"></span>
+                                </li> 
+                                                    </ul><!--dropdown list--> 
+                        </div>
+                        
+                    </div> 
+
+                    
+                </li><!--Parent list--> 
+                                                <li class="filters parent_filter_list position-relative mb-3" filter_name="Shifts"> 
+                    <div class="filters"> 
+                        <!--<span class="tr_box mt-0 mr-2 Shifts"></span>-->
+                        <span class="weight_600">Shifts</span> 
+                        <div class="position-relative w-100 ml-3">
+
+                            <span class="filter_option_click w-100 mr-0 ml-0">
+                                <span class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="filter_options custom-control-input Shifts_ShowAll" id="Shifts_ShowAll" value="ShowAll" name="color_box_ShowAll[]" filter_name="Shifts" checked="checked" is_checked']}}'="">
+                                    <label class="custom-control-label cursor_pointer" for="Shifts_ShowAll">All</label>
+                                </span> 
+                                <i class="far fa-angle-down"></i>
+                            </span>
+                            <ul class="filter_options dropdown_filter_options left_0"> 
+                          
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="filter_options custom-control-input Shifts_Assigned" id="Shifts_Assigned" value="Assigned" name="color_box_Assigned[]" filter_name="Shifts" checked="checked" is_checked']}}'="">
+                                        <label class="custom-control-label" for="Shifts_Assigned">Assigned</label>
+                                    </div>
+                                    <span class="tr_box mt-0 mr-2 Shifts box_color_Assigned"></span>
+                                </li> 
+                                  
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="filter_options custom-control-input Shifts_Booked" id="Shifts_Booked" value="Booked" name="color_box_Booked[]" filter_name="Shifts" checked="checked" is_checked']}}'="">
+                                        <label class="custom-control-label" for="Shifts_Booked">Booked</label>
+                                    </div>
+                                    <span class="tr_box mt-0 mr-2 Shifts box_color_Booked"></span>
+                                </li> 
+                                  
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="filter_options custom-control-input Shifts_Open" id="Shifts_Open" value="Open" name="color_box_Open[]" filter_name="Shifts" checked="checked" is_checked']}}'="">
+                                        <label class="custom-control-label" for="Shifts_Open">Open</label>
+                                    </div>
+                                    <span class="tr_box mt-0 mr-2 Shifts box_color_Open"></span>
+                                </li> 
+                                  
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="filter_options custom-control-input Shifts_Pending_Billing" id="Shifts_Pending_Billing" value="Pending_Billing" name="color_box_Pending_Billing[]" filter_name="Shifts" checked="checked" is_checked']}}'="">
+                                        <label class="custom-control-label" for="Shifts_Pending_Billing">Pending Billing</label>
+                                    </div>
+                                    <span class="tr_box mt-0 mr-2 Shifts box_color_Pending_Billing"></span>
+                                </li> 
+                                                    </ul><!--dropdown list-->
+                        </div>
+                    </div> 
+
+                     
+                </li><!--Parent list--> 
+                                                <li class="filters parent_filter_list position-relative mb-3" filter_name="Milestones"> 
+                    <div class="filters"> 
+                        <!--<span class="tr_box mt-0 mr-2 Milestones"></span>-->
+                        <span class="weight_600">Milestones</span> 
+                        <div class="position-relative w-100 ml-3">
+
+                            <span class="filter_option_click w-100 mr-0 ml-0">
+                                <span class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="filter_options custom-control-input Milestones_ShowAll" id="Milestones_ShowAll" value="ShowAll" name="color_box_ShowAll[]" filter_name="Milestones" checked="checked" is_checked']}}'="">
+                                    <label class="custom-control-label cursor_pointer" for="Milestones_ShowAll">All</label>
+                                </span> 
+                                <i class="far fa-angle-down"></i>
+                            </span>
+                            <ul class="filter_options dropdown_filter_options left_0"> 
+                          
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="filter_options custom-control-input Milestones_In_Progress" id="Milestones_In_Progress" value="In_Progress" name="color_box_In_Progress[]" filter_name="Milestones" checked="checked" is_checked']}}'="">
+                                        <label class="custom-control-label" for="Milestones_In_Progress">In Progress</label>
+                                    </div>
+                                    <span class="tr_box mt-0 mr-2 Milestones box_color_In_Progress"></span>
+                                </li> 
+                                                    </ul><!--dropdown list--> 
+                        </div>
+                    </div> 
+
+                    
+                </li><!--Parent list--> 
+                                                <li class="filters parent_filter_list position-relative mb-3" filter_name="Shipping"> 
+                    <div class="filters"> 
+                        <!--<span class="tr_box mt-0 mr-2 Shipping"></span>-->
+                        <span class="weight_600">Shipping</span> 
+                        <div class="position-relative w-100 ml-3">
+
+                            <span class="filter_option_click w-100 mr-0 ml-0">
+                                <span class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="filter_options custom-control-input Shipping_ShowAll" id="Shipping_ShowAll" value="ShowAll" name="color_box_ShowAll[]" filter_name="Shipping" checked="checked" is_checked']}}'="">
+                                    <label class="custom-control-label cursor_pointer" for="Shipping_ShowAll">All</label>
+                                </span> 
+                                <i class="far fa-angle-down"></i>
+                            </span>
+                            <ul class="filter_options dropdown_filter_options left_0"> 
+                          
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="filter_options custom-control-input Shipping_In_transit" id="Shipping_In_transit" value="In_transit" name="color_box_In_transit[]" filter_name="Shipping" checked="checked" is_checked']}}'="">
+                                        <label class="custom-control-label" for="Shipping_In_transit">In Transit</label>
+                                    </div>
+                                    <span class="tr_box mt-0 mr-2 Shipping box_color_In_transit"></span>
+                                </li> 
+                                  
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="filter_options custom-control-input Shipping_Shipped" id="Shipping_Shipped" value="Shipped" name="color_box_Shipped[]" filter_name="Shipping" checked="checked" is_checked']}}'="">
+                                        <label class="custom-control-label" for="Shipping_Shipped">Shipped</label>
+                                    </div>
+                                    <span class="tr_box mt-0 mr-2 Shipping box_color_Shipped"></span>
+                                </li> 
+                                                    </ul><!--dropdown list--> 
+                        </div>
+                    </div> 
+
+                    
+                </li><!--Parent list--> 
+                                                <li class="filters parent_filter_list position-relative mb-3" filter_name="Campaigns"> 
+                    <div class="filters"> 
+                        <!--<span class="tr_box mt-0 mr-2 Campaigns"></span>-->
+                        <span class="weight_600">Campaigns</span> 
+                        <div class="position-relative w-100 ml-3">
+
+                            <span class="filter_option_click w-100 mr-0 ml-0">
+                                <span class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="filter_options custom-control-input Campaigns_ShowAll" id="Campaigns_ShowAll" value="ShowAll" name="color_box_ShowAll[]" filter_name="Campaigns" checked="checked" is_checked']}}'="">
+                                    <label class="custom-control-label cursor_pointer" for="Campaigns_ShowAll">All</label>
+                                </span> 
+                                <i class="far fa-angle-down"></i>
+                            </span>
+                            <ul class="filter_options dropdown_filter_options left_0"> 
+                          
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="filter_options custom-control-input Campaigns_Live" id="Campaigns_Live" value="Live" name="color_box_Live[]" filter_name="Campaigns" checked="checked" is_checked']}}'="">
+                                        <label class="custom-control-label" for="Campaigns_Live">Live</label>
+                                    </div>
+                                    <span class="tr_box mt-0 mr-2 Campaigns box_color_Live"></span>
+                                </li> 
+                                                    </ul><!--dropdown list--> 
+                        </div>
+                    </div> 
+
+                    
+                </li><!--Parent list--> 
+                                <li><button class="btn cursor_pointer">Save </button></li>
+            </ul><!--dropdown list--> 
+        </div>
+
+        
+        
+    </div>
+</div>    <div class="calendar_page p-3 w-100">
+                <div id="eventDataModal" class="modal fade" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title color_green">Add Edit modal</h5>
+                <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+            </div>
+            <div class="modal-body">
+                <form class="ng-pristine ng-valid">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="newItem.title" placeholder="Closed">
+                    </div>
+                    <div class="form-group">
+                        <label>Value</label>
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="newItem.value" placeholder="Closed">
+                    </div>
+                </form>
+            </div> 
+        </div>
+
+    </div>
+</div>
+
+
+
+        <div id="calendar" class="calendar_page_overflow fc fc-ltr fc-unthemed" style=""><div class="fc-toolbar fc-header-toolbar"><div class="fc-left"><div class="fc-button-group"><div class="d-flex align-items-center"><span class="form-control advanced_filter mr-3 cursor_pointer min_w_auto"><i class="fal fa-sliders-h mr-2"></i> Filters</span></div><button type="button" class="fc-prev-button fc-button fc-button-primary" aria-label="prev"><span class="fc-icon fc-icon-chevron-left"></span></button><button type="button" class="fc-next-button fc-button fc-button-primary" aria-label="next"><span class="fc-icon fc-icon-chevron-right"></span></button></div><button type="button" class="fc-today-button fc-button fc-button-primary" disabled="disabled">today</button></div><div class="fc-center"><h2>December 2019</h2></div><div class="fc-right"><div class="fc-button-group"><button type="button" class="fc-dayGridMonth-button fc-button fc-button-primary fc-button-active">month</button><button type="button" class="fc-timeGridWeek-button fc-button fc-button-primary">week</button><button type="button" class="fc-timeGridDay-button fc-button fc-button-primary">day</button></div></div></div><div class="fc-view-container"><div class="fc-view fc-dayGridMonth-view fc-dayGrid-view" style=""><table class=""><thead class="fc-head"><tr><td class="fc-head-container fc-widget-header"><div class="fc-row fc-widget-header"><table class=""><thead><tr><th class="fc-day-header fc-widget-header fc-sun"><span>Sunday</span></th><th class="fc-day-header fc-widget-header fc-mon"><span>Monday</span></th><th class="fc-day-header fc-widget-header fc-tue"><span>Tuesday</span></th><th class="fc-day-header fc-widget-header fc-wed"><span>Wednesday</span></th><th class="fc-day-header fc-widget-header fc-thu"><span>Thursday</span></th><th class="fc-day-header fc-widget-header fc-fri"><span>Friday</span></th><th class="fc-day-header fc-widget-header fc-sat"><span>Saturday</span></th></tr></thead></table></div></td></tr></thead><tbody class="fc-body"><tr><td class="fc-widget-content"><div class="fc-scroller fc-day-grid-container" style="overflow: hidden auto; height: auto;"><div class="fc-day-grid"><div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 170px;"><div class="fc-bg"><table class=""><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-past" data-date="2019-12-01"></td><td class="fc-day fc-widget-content fc-mon fc-past" data-date="2019-12-02"></td><td class="fc-day fc-widget-content fc-tue fc-past" data-date="2019-12-03"></td><td class="fc-day fc-widget-content fc-wed fc-past" data-date="2019-12-04"></td><td class="fc-day fc-widget-content fc-thu fc-past" data-date="2019-12-05"></td><td class="fc-day fc-widget-content fc-fri fc-past" data-date="2019-12-06"></td><td class="fc-day fc-widget-content fc-sat fc-past" data-date="2019-12-07"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-past" data-date="2019-12-01"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-01&quot;,&quot;type&quot;:&quot;day&quot;}">1</a></td><td class="fc-day-top fc-mon fc-past" data-date="2019-12-02"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-02&quot;,&quot;type&quot;:&quot;day&quot;}">2</a></td><td class="fc-day-top fc-tue fc-past" data-date="2019-12-03"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-03&quot;,&quot;type&quot;:&quot;day&quot;}">3</a></td><td class="fc-day-top fc-wed fc-past" data-date="2019-12-04"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-04&quot;,&quot;type&quot;:&quot;day&quot;}">4</a></td><td class="fc-day-top fc-thu fc-past" data-date="2019-12-05"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-05&quot;,&quot;type&quot;:&quot;day&quot;}">5</a></td><td class="fc-day-top fc-fri fc-past" data-date="2019-12-06"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-06&quot;,&quot;type&quot;:&quot;day&quot;}">6</a></td><td class="fc-day-top fc-sat fc-past" data-date="2019-12-07"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-07&quot;,&quot;type&quot;:&quot;day&quot;}">7</a></td></tr></thead><tbody><tr><td class="fc-event-container" colspan="2"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end Jobs Jobs_New fc-draggable"><div class="fc-content"><span class="fc-time">3p</span> <span class="fc-title">Event 1</span></div></a></td><td rowspan="2"></td><td class="fc-event-container" rowspan="2"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end Jobs Jobs_New fc-draggable"><div class="fc-content"><span class="fc-time">3p</span> <span class="fc-title">Event 3</span></div></a></td><td class="fc-event-container" rowspan="2"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end Jobs Jobs_New fc-draggable"><div class="fc-content"><span class="fc-time">3p</span> <span class="fc-title">Event 4</span></div></a></td><td class="fc-event-container" rowspan="2"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end Jobs Jobs_New fc-draggable"><div class="fc-content"><span class="fc-time">3p</span> <span class="fc-title">Event 5</span></div></a></td><td rowspan="2"></td></tr><tr class=""><td></td><td class="fc-event-container"><a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end Jobs Jobs_New fc-draggable"><div class="fc-content"><span class="fc-time">3p</span> <span class="fc-title">Event 2</span></div></a></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 170px;"><div class="fc-bg"><table class=""><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-past" data-date="2019-12-08"></td><td class="fc-day fc-widget-content fc-mon fc-past" data-date="2019-12-09"></td><td class="fc-day fc-widget-content fc-tue fc-past" data-date="2019-12-10"></td><td class="fc-day fc-widget-content fc-wed fc-past" data-date="2019-12-11"></td><td class="fc-day fc-widget-content fc-thu fc-past" data-date="2019-12-12"></td><td class="fc-day fc-widget-content fc-fri fc-past" data-date="2019-12-13"></td><td class="fc-day fc-widget-content fc-sat fc-past" data-date="2019-12-14"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-past" data-date="2019-12-08"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-08&quot;,&quot;type&quot;:&quot;day&quot;}">8</a></td><td class="fc-day-top fc-mon fc-past" data-date="2019-12-09"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-09&quot;,&quot;type&quot;:&quot;day&quot;}">9</a></td><td class="fc-day-top fc-tue fc-past" data-date="2019-12-10"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-10&quot;,&quot;type&quot;:&quot;day&quot;}">10</a></td><td class="fc-day-top fc-wed fc-past" data-date="2019-12-11"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-11&quot;,&quot;type&quot;:&quot;day&quot;}">11</a></td><td class="fc-day-top fc-thu fc-past" data-date="2019-12-12"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-12&quot;,&quot;type&quot;:&quot;day&quot;}">12</a></td><td class="fc-day-top fc-fri fc-past" data-date="2019-12-13"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-13&quot;,&quot;type&quot;:&quot;day&quot;}">13</a></td><td class="fc-day-top fc-sat fc-past" data-date="2019-12-14"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-14&quot;,&quot;type&quot;:&quot;day&quot;}">14</a></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 170px;"><div class="fc-bg"><table class=""><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-past" data-date="2019-12-15"></td><td class="fc-day fc-widget-content fc-mon fc-past" data-date="2019-12-16"></td><td class="fc-day fc-widget-content fc-tue fc-past" data-date="2019-12-17"></td><td class="fc-day fc-widget-content fc-wed fc-past" data-date="2019-12-18"></td><td class="fc-day fc-widget-content fc-thu fc-past" data-date="2019-12-19"></td><td class="fc-day fc-widget-content fc-fri fc-today " data-date="2019-12-20"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2019-12-21"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-past" data-date="2019-12-15"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-15&quot;,&quot;type&quot;:&quot;day&quot;}">15</a></td><td class="fc-day-top fc-mon fc-past" data-date="2019-12-16"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-16&quot;,&quot;type&quot;:&quot;day&quot;}">16</a></td><td class="fc-day-top fc-tue fc-past" data-date="2019-12-17"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-17&quot;,&quot;type&quot;:&quot;day&quot;}">17</a></td><td class="fc-day-top fc-wed fc-past" data-date="2019-12-18"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-18&quot;,&quot;type&quot;:&quot;day&quot;}">18</a></td><td class="fc-day-top fc-thu fc-past" data-date="2019-12-19"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-19&quot;,&quot;type&quot;:&quot;day&quot;}">19</a></td><td class="fc-day-top fc-fri fc-today " data-date="2019-12-20"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-20&quot;,&quot;type&quot;:&quot;day&quot;}">20</a></td><td class="fc-day-top fc-sat fc-future" data-date="2019-12-21"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-21&quot;,&quot;type&quot;:&quot;day&quot;}">21</a></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 170px;"><div class="fc-bg"><table class=""><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2019-12-22"></td><td class="fc-day fc-widget-content fc-mon fc-future" data-date="2019-12-23"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2019-12-24"></td><td class="fc-day fc-widget-content fc-wed fc-future" data-date="2019-12-25"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2019-12-26"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2019-12-27"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2019-12-28"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-future" data-date="2019-12-22"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-22&quot;,&quot;type&quot;:&quot;day&quot;}">22</a></td><td class="fc-day-top fc-mon fc-future" data-date="2019-12-23"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-23&quot;,&quot;type&quot;:&quot;day&quot;}">23</a></td><td class="fc-day-top fc-tue fc-future" data-date="2019-12-24"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-24&quot;,&quot;type&quot;:&quot;day&quot;}">24</a></td><td class="fc-day-top fc-wed fc-future" data-date="2019-12-25"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-25&quot;,&quot;type&quot;:&quot;day&quot;}">25</a></td><td class="fc-day-top fc-thu fc-future" data-date="2019-12-26"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-26&quot;,&quot;type&quot;:&quot;day&quot;}">26</a></td><td class="fc-day-top fc-fri fc-future" data-date="2019-12-27"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-27&quot;,&quot;type&quot;:&quot;day&quot;}">27</a></td><td class="fc-day-top fc-sat fc-future" data-date="2019-12-28"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-28&quot;,&quot;type&quot;:&quot;day&quot;}">28</a></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 170px;"><div class="fc-bg"><table class=""><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2019-12-29"></td><td class="fc-day fc-widget-content fc-mon fc-future" data-date="2019-12-30"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2019-12-31"></td><td class="fc-day fc-widget-content fc-wed fc-other-month fc-future" data-date="2020-01-01"></td><td class="fc-day fc-widget-content fc-thu fc-other-month fc-future" data-date="2020-01-02"></td><td class="fc-day fc-widget-content fc-fri fc-other-month fc-future" data-date="2020-01-03"></td><td class="fc-day fc-widget-content fc-sat fc-other-month fc-future" data-date="2020-01-04"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-future" data-date="2019-12-29"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-29&quot;,&quot;type&quot;:&quot;day&quot;}">29</a></td><td class="fc-day-top fc-mon fc-future" data-date="2019-12-30"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-30&quot;,&quot;type&quot;:&quot;day&quot;}">30</a></td><td class="fc-day-top fc-tue fc-future" data-date="2019-12-31"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2019-12-31&quot;,&quot;type&quot;:&quot;day&quot;}">31</a></td><td class="fc-day-top fc-wed fc-other-month fc-future" data-date="2020-01-01"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2020-01-01&quot;,&quot;type&quot;:&quot;day&quot;}">1</a></td><td class="fc-day-top fc-thu fc-other-month fc-future" data-date="2020-01-02"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2020-01-02&quot;,&quot;type&quot;:&quot;day&quot;}">2</a></td><td class="fc-day-top fc-fri fc-other-month fc-future" data-date="2020-01-03"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2020-01-03&quot;,&quot;type&quot;:&quot;day&quot;}">3</a></td><td class="fc-day-top fc-sat fc-other-month fc-future" data-date="2020-01-04"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2020-01-04&quot;,&quot;type&quot;:&quot;day&quot;}">4</a></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 175px;"><div class="fc-bg"><table class=""><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-other-month fc-future" data-date="2020-01-05"></td><td class="fc-day fc-widget-content fc-mon fc-other-month fc-future" data-date="2020-01-06"></td><td class="fc-day fc-widget-content fc-tue fc-other-month fc-future" data-date="2020-01-07"></td><td class="fc-day fc-widget-content fc-wed fc-other-month fc-future" data-date="2020-01-08"></td><td class="fc-day fc-widget-content fc-thu fc-other-month fc-future" data-date="2020-01-09"></td><td class="fc-day fc-widget-content fc-fri fc-other-month fc-future" data-date="2020-01-10"></td><td class="fc-day fc-widget-content fc-sat fc-other-month fc-future" data-date="2020-01-11"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-other-month fc-future" data-date="2020-01-05"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2020-01-05&quot;,&quot;type&quot;:&quot;day&quot;}">5</a></td><td class="fc-day-top fc-mon fc-other-month fc-future" data-date="2020-01-06"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2020-01-06&quot;,&quot;type&quot;:&quot;day&quot;}">6</a></td><td class="fc-day-top fc-tue fc-other-month fc-future" data-date="2020-01-07"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2020-01-07&quot;,&quot;type&quot;:&quot;day&quot;}">7</a></td><td class="fc-day-top fc-wed fc-other-month fc-future" data-date="2020-01-08"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2020-01-08&quot;,&quot;type&quot;:&quot;day&quot;}">8</a></td><td class="fc-day-top fc-thu fc-other-month fc-future" data-date="2020-01-09"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2020-01-09&quot;,&quot;type&quot;:&quot;day&quot;}">9</a></td><td class="fc-day-top fc-fri fc-other-month fc-future" data-date="2020-01-10"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2020-01-10&quot;,&quot;type&quot;:&quot;day&quot;}">10</a></td><td class="fc-day-top fc-sat fc-other-month fc-future" data-date="2020-01-11"><a class="fc-day-number" data-goto="{&quot;date&quot;:&quot;2020-01-11&quot;,&quot;type&quot;:&quot;day&quot;}">11</a></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></div></div></td></tr></tbody></table></div></div></div>
+    </div>
+</div>
+<style>
+.left_0{
+    left: 0;
+    right: auto;
+}
+</style>
+    </section>
+
+<script src="Calendar_files/main_002.js"></script>
+<script src="Calendar_files/main_004.js"></script>
+<script src="Calendar_files/main_003.js"></script>
+<script src="Calendar_files/main.js"></script>
+<script src="Calendar_files/popper_002.js"></script>
+<script src="Calendar_files/tooltip.js"></script>
+<script src="Calendar_files/jquery-ui.js"></script>
+    
+    
+
+
+
+</body></html>

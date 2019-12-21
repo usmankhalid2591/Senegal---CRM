@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <title>Oops!</title>
+
+
+    <style>
+        /***************************************************
+            CSS for not-found.html
+            ****************************************************/
+
+        .btn {
+            width: 200px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            background-color: #690;
+            color: #fff;
+            border-radius: 4px;
+            padding: 5px 20px;
+            cursor: pointer;
+        }
+
+        .not-found-page {
+            font-family: "Open Sans", sans-serif;
+            color: #333333;
+            height: 100vh;
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-areas: ". left left left left left right right right right right right right .";
+        }
+
+        .not-found-page .left {
+            -ms-grid-row: 1;
+            -ms-grid-column: 2;
+            -ms-grid-column-span: 5;
+            grid-area: left;
+            padding: 1rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .not-found-page .left .left__image {
+            width: 400px;
+        }
+
+        .not-found-page .right {
+            -ms-grid-row: 1;
+            -ms-grid-column: 7;
+            -ms-grid-column-span: 7;
+            grid-area: right;
+            padding: 1rem;
+            display: -ms-grid;
+            display: grid;
+            height: 100vh;
+            -ms-grid-rows: 25% 1fr 1fr 1fr 25%;
+            grid-template-rows: 25% 1fr 1fr 1fr 25%;
+            grid-template-areas:
+                "."
+                "not-found"
+                "text"
+                "button"
+                ".";
+        }
+
+        .not-found-page .right .right__not-found {
+            -ms-grid-row: 2;
+            -ms-grid-column: 1;
+            grid-area: not-found;
+            font-size: 90px;
+        }
+
+        .not-found-page .right .right__text {
+            -ms-grid-row: 3;
+            -ms-grid-column: 1;
+            grid-area: text;
+            font-size: 35px;
+        }
+
+        .not-found-page .right .right__button {
+            -ms-grid-row: 4;
+            -ms-grid-column: 1;
+            grid-area: button;
+        }
+
+        .not-found-page .right .right__button .btn {
+            width: 200px;
+            height: 50px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            font-size: 25px;
+        }
+    </style>
+
+
+</head>
+
+<body class="not-found-page">
+    <div class="left">
+        <img class="left__image" src="image/sad_face.svg" alt="">
+    </div>
+    <div class="right">
+        <div class="right__not-found">Page Not Found</div>
+        <div class="right__text">We can't find the page you're looking for.</div>
+        <div class="right__button">
+            <div class="btn">Go back</div>
+        </div>
+    </div>
+</body>
+
+</html>

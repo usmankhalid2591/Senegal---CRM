@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="fonts/css/all.css" rel="stylesheet" type="text/css">
+    <!-- Usman's Style -->
+    <link rel="stylesheet" href="css/style-new.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <title>Oops!</title>
+
+    <style>
+        .not-found-page {
+            font-family: "Open Sans", sans-serif;
+            color: #666;
+            margin: 0px;
+            padding: 0px;
+            height: 100vh;
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            -ms-grid-rows: 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: "left right";
+        }
+
+        .not-found-page .left {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+            grid-area: left;
+            background-color: #fff;
+            padding: 2rem;
+            height: 100%;
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-rows: 3fr 1fr 1fr;
+            grid-template-rows: 3fr 1fr 1fr;
+            grid-template-areas: 
+                "four"
+                "not-found"
+                "go-back"
+                ;
+        }
+
+        .not-found-page .left .go-back {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+            grid-area: go-back;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .not-found-page .left .four {
+            -ms-grid-row: 2;
+            -ms-grid-column: 1;
+            grid-area: four;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            font-size: 300px;
+            font-weight: 600;
+        }
+
+        .not-found-page .left .not-found {
+            -ms-grid-row: 3;
+            -ms-grid-column: 1;
+            grid-area: not-found;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .not-found-page .right {
+            -ms-grid-row: 1;
+            -ms-grid-column: 2;
+            grid-area: right;
+            background-color: var(--main-color);
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-orient: vertical !important;
+            -webkit-box-direction: normal !important;
+            -ms-flex-direction: column !important;
+            flex-direction: column !important;
+        }
+
+
+        .not-found-page .right .right--image img {
+            width: 15rem;
+        }
+
+        .not-found-page .right .right--heading {
+            color: #fff;
+            font-size: 40px;
+            margin-top: 2rem;
+        }
+
+        @media only screen and (max-width: 1600px) {
+            .not-found-page .left .four {
+                font-size: 250px;
+            }
+        }
+
+        @media only screen and (max-width: 1280px) {
+            .not-found-page .left .four {
+                font-size: 210px;
+            }
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .not-found-page .left .four {
+                font-size: 180px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .not-found-page {
+                -ms-grid-columns: 1fr;
+                grid-template-columns: 1fr;
+                -ms-grid-rows: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-template-areas: "left"
+                    "right";
+                overflow: auto;
+            }
+
+            .left {
+                -ms-grid-row: 1;
+                -ms-grid-column: 1;
+                grid-area: left;
+                height: 100%;
+                display: -ms-grid;
+                display: grid;
+                -ms-grid-rows: 1fr 8fr 1fr !important;
+                grid-template-rows: 1fr 8fr 1fr !important;
+                grid-template-areas: "go-back""four""not-found";
+            }
+
+            .left .four {
+                font-size: 150px;
+            }
+
+            .right {
+                -ms-grid-row: 2;
+                -ms-grid-column: 1;
+                grid-area: right;
+                background-color: var(--main-color);
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-orient: vertical !important;
+                -webkit-box-direction: normal !important;
+                -ms-flex-direction: column !important;
+                flex-direction: column !important;
+            }
+
+            .right img {
+                width: 15rem;
+                margin-top: 3rem;
+            }
+
+            .right h1 {
+                color: #fff;
+                font-size: 40px;
+                margin-top: 1rem;
+                margin-bottom: 3rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="not-found-page">
+    <div class="left">
+        <div class="four">404</div>
+        <div class="not-found">
+            <div class="d-flex justify-content-center align-items-center">
+                Page not found
+                <i class="far fa-sad-cry ml-2"></i>
+            </div>
+        </div>
+        <div class="go-back">
+            <a href="#" class="color_green">
+                Go Back
+            </a>
+        </div>
+
+    </div>
+    <div class="right">
+
+        <div class="right--image">
+            <img src="image/logo404.svg" alt="logo">
+        </div>
+
+        <h1 class="right--heading">Senegal</h1>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

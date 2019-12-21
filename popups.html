@@ -1,0 +1,2624 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="fonts/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-new.css">
+    <title>Popups</title>
+</head>
+
+<body class="popups_page animated fadeIn">
+    <!-- This is a grid container -->
+
+    <div class="popups_header" data-scroll>
+        <h1 class="display-1">PopUps</h1>
+    </div>
+
+    <div class="popups">
+        <!-- This is a grid item -->
+
+        <div class="row text-center">
+            <!-- Modals go in columns -->
+
+            <!-- Dashboard Modal -->
+            <div class="col-4">
+                <h1 class="display-4">dashboard.html Modal</h1>
+                <a href="javascript:void(0);" class="btn d-block" data-toggle="modal" data-target="#add">Add</a>
+            </div>
+
+            <!-- Add Campaign Modal -->
+            <div class="col-4">
+                <h1 class="display-4">add-campaign.html Modal</h1>
+                <div class="first_mail_box">
+                    <p class="mb-0">Send the first email instantly</p>
+                    <i class="far fa-pen color_green" data-toggle="modal" data-target="#selectsettime"></i>
+                </div>
+            </div>
+
+            <!-- Estimates Detail Modal -->
+            <div class="col-4">
+                <h1 class="display-4">estimates-detail.html Modal</h1>
+                <div class="dropdown show">
+                    <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                            class="far fa-bars"></i></span>
+                    <div class="dropdown-menu show" x-placement="bottom-end"
+                        style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-105px, 28px, 0px);">
+                        <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#editLead">
+                            Edit Lead</a>
+                        <a class="dropdown-item" href="javascript:void(0);"> Delete
+                            Lead</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estimates Modal -->
+            <div class="col-4">
+                <h1 class="display-4">estimates.html Modal</h1>
+                <div class="form-control d-flex align-items-center cursor_pointer" data-toggle="modal"
+                    data-target="#addestimate">
+                    <i class="fal fa-plus mr-3"></i>
+                    <p class="mb-0 text-nowrap">Add Estimate</p>
+                </div>
+            </div>
+
+            <!-- Estimates (Edit Lead Modal) -->
+            <div class="col-4">
+                <h1 class="display-4">estimates.html (edit lead)</h1>
+                <i class="far fa-edit cursor_pointer" data-toggle="modal" data-target="#editLead"></i>
+            </div>
+
+            <!-- Global Search (Edit Lead) Modal -->
+            <div class="col-4">
+                <h1 class="display-4">global-search.html</h1>
+                <div class="dropdown show">
+                    <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                            class="far fa-bars"></i></span>
+                    <div class="dropdown-menu show" x-placement="bottom-end"
+                        style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-105px, 28px, 0px);">
+                        <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#editLead">
+                            Edit Lead</a>
+                        <a class="dropdown-item" href="javascript:void(0);"> Delete
+                            Lead</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Listing Application Add Questionnaire Modal -->
+            <div class="col-4">
+                <h1 class="display-4">job-listing-application.html</h1>
+                <button class="btn mt-3" data-toggle="modal" data-target="#addaQuestionnaire">Add a
+                    Questionnaire</button>
+            </div>
+
+            <!-- Job Listing Hiring Team Modal -->
+            <div class="col-4">
+                <h1 class="display-4">job-listing-hiring-team.html</h1>
+                <button class="btn" data-toggle="modal" data-target="#addscorecard">Add Scorecard</button>
+            </div>
+
+            <!-- Job Listing Settings Modal -->
+            <div class="col-4">
+                <h1 class="display-4">job-listing-settings.html</h1>
+                <a data-toggle="modal" data-target="#submissionReceived">
+                    <i class="far fa-edit color_green ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Job Posts Attachments Modal -->
+            <div class="col-4">
+                <h1 class="display-4">job-posts-attachments.html</h1>
+                <div class="dropdown show">
+                    <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                            class="far fa-bars"></i></span>
+                    <div class="dropdown-menu show" x-placement="bottom-end"
+                        style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-105px, 28px, 0px);">
+                        <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#editLead">
+                            Edit Lead</a>
+                        <a class="dropdown-item" href="javascript:void(0);"> Delete
+                            Lead</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Posts Detail Modal -->
+            <div class="col-4">
+                <h1 class="display-4">job-posts-detail.html</h1>
+                <div class="dropdown show">
+                    <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                            class="far fa-bars"></i></span>
+                    <div class="dropdown-menu show" x-placement="bottom-end"
+                        style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-105px, 28px, 0px);">
+                        <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#editLead">
+                            Edit Lead</a>
+                        <a class="dropdown-item" href="javascript:void(0);"> Delete
+                            Lead</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job posts Notes Modal -->
+            <div class="col-4">
+                <h1 class="display-4">job-posts-notes.html</h1>
+                <div class="dropdown show">
+                    <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                            class="far fa-bars"></i></span>
+                    <div class="dropdown-menu show" x-placement="bottom-end"
+                        style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-105px, 28px, 0px);">
+                        <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#editLead">
+                            Edit Lead</a>
+                        <a class="dropdown-item" href="javascript:void(0);"> Delete
+                            Lead</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Posts Questionnaire -->
+            <div class="col-12">
+                <h1 class="display-4">Job-posts-questionnaire.html</h1>
+                <div class="d-flex justify-content-around align-items-center">
+                    <div class="dropdown show">
+                        <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                                class="far fa-bars"></i></span>
+                        <div class="dropdown-menu dropdown-menu-right show" x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-166px, 28px, 0px);">
+                            <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal"
+                                data-target="#editcandidate">
+                                Edit Candidate Details</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Copy Candidate</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Archive Candidate</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Delete Candidate</a>
+                        </div>
+                    </div>
+                    <button class="btn" data-toggle="modal" data-target="#sendquestionnaire">Send Questionnaire</button>
+                    <a href="javascript:void(0);" data-toggle="tooltip" title="Scorecard">
+                        <div class="circle_link" data-toggle="modal" data-target="#scorecard">
+                            <i class="far fa-clipboard-user"></i>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0);" data-toggle="tooltip" title="Calendar">
+                        <div class="circle_link" data-toggle="modal" data-target="#scheduleinterview">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Job Posts Questionnaire -->
+            <div class="col-12">
+                <h1 class="display-4">Job-posts-resume.html</h1>
+                <div class="d-flex justify-content-around align-items-center">
+                    <a href="javascript:void(0);" data-toggle="tooltip" title="Calendar">
+                        <div class="circle_link" data-toggle="modal" data-target="#scheduleinterview">
+                            <i class="far fa-calendar-alt"></i></div>
+                    </a>
+                    <a href="javascript:void(0);" data-toggle="tooltip" title="Scorecard">
+                        <div class="circle_link" data-toggle="modal" data-target="#scorecard"><i
+                                class="far fa-clipboard-user"></i></div>
+                    </a>
+                    <div class="dropdown show">
+                        <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                                class="far fa-bars"></i></span>
+                        <div class="dropdown-menu dropdown-menu-right show" x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-166px, 28px, 0px);">
+                            <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal"
+                                data-target="#editcandidate">
+                                Edit Candidate Details</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Copy Candidate</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Archive Candidate</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Delete Candidate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Posts Score card -->
+            <div class="col-12">
+                <h1 class="display-4">Job-posts-scorecard.html</h1>
+                <div class="d-flex justify-content-around align-items-center">
+                    <div class="dropdown show">
+                        <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                                class="far fa-bars"></i></span>
+                        <div class="dropdown-menu show" x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-105px, 28px, 0px);">
+                            <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal"
+                                data-target="#editLead">
+                                Edit Lead</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Delete
+                                Lead</a>
+                        </div>
+                    </div>
+
+                    <button class="btn" data-toggle="modal" data-target="#requestscorecards">Request
+                        Scorecards</button>
+
+                </div>
+            </div>
+
+            <!-- Job Posts Modal -->
+            <div class="col-12">
+                <h1 class="display-4">job-posts.html</h1>
+                <div class="d-flex justify-content-around align-items-center">
+
+
+                    <a href="javascript:void(0);" data-toggle="tooltip" title="Calendar">
+                        <div class="circle_link" data-toggle="modal" data-target="#scheduleinterview">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                    </a>
+
+                    <a href="javascript:void(0);" data-toggle="tooltip" title="Scorecard">
+                        <div class="circle_link" data-toggle="modal" data-target="#scorecard"><i
+                                class="far fa-clipboard-user"></i>
+                        </div>
+                    </a>
+
+                    <div class="dropdown show">
+                        <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                                class="far fa-bars"></i></span>
+                        <div class="dropdown-menu dropdown-menu-right show" x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-166px, 28px, 0px);">
+                            <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal"
+                                data-target="#editcandidate">
+                                Edit Candidate Details</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Copy Candidate</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Archive Candidate</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Delete Candidate</a>
+                        </div>
+                    </div>
+
+                    <p class="color_green cursor_pointer m-0" data-toggle="modal" data-target="#addsummary">+ Add
+                        Summary
+                    </p>
+
+                    <a href="javascript:void(0);" class="color_green" data-toggle="modal" data-target="#editsummary">
+                        <i class="far fa-edit"></i> Edit Summary</a>
+
+                    <p class="color_green cursor_pointer m-0" data-toggle="modal" data-target="#addexperience">+ Add
+                        Experience</p>
+
+                    <p class="color_green cursor_pointer m-0" data-toggle="modal" data-target="#addeducation">+ Add
+                        Education</p>
+
+                </div>
+            </div>
+
+            <!-- Lead Detail Add Contact Copy -->
+            <div class="col-12">
+                <h1 class="display-4">lead-detail-add-contact-copy.html</h1>
+                <div class="d-flex justify-content-around align-items-center">
+
+                    <div class="dropdown show">
+                        <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                                class="far fa-bars"></i></span>
+                        <div class="dropdown-menu show" x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-105px, 28px, 0px);">
+                            <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal"
+                                data-target="#editLead">
+                                Edit Lead</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Delete
+                                Lead</a>
+                        </div>
+                    </div>
+                    <button class="btn mr-2" data-toggle="modal" data-target="#creatopportunity">Create
+                        Opportunity</button>
+                    <button class="btn ml-2" data-toggle="modal" data-target="#selectopportunity">Select
+                        Opportunity</button>
+
+                </div>
+            </div>
+
+            <!-- Lead Detail Add Contact -->
+            <div class="col-12">
+                <h1 class="display-4">lead-detail-add-contact.html</h1>
+                <div class="d-flex justify-content-around align-items-center">
+
+                    <div class="dropdown show">
+                        <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                                class="far fa-bars"></i></span>
+                        <div class="dropdown-menu show" x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-105px, 28px, 0px);">
+                            <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal"
+                                data-target="#editLead">
+                                Edit Lead</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Delete
+                                Lead</a>
+                        </div>
+                    </div>
+                    <button class="btn mr-2" data-toggle="modal" data-target="#creatopportunity">Create
+                        Opportunity</button>
+                    <button class="btn ml-2" data-toggle="modal" data-target="#selectopportunity">Select
+                        Opportunity</button>
+
+                </div>
+            </div>
+
+            <!-- Lead Detail Attachments -->
+            <div class="col-12">
+                <h1 class="display-4">lead-detail-attachments.html</h1>
+                <div class="d-flex justify-content-around align-items-center">
+
+                    <div class="dropdown show">
+                        <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                                class="far fa-bars"></i></span>
+                        <div class="dropdown-menu show" x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-105px, 28px, 0px);">
+                            <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal"
+                                data-target="#editLead">
+                                Edit Lead</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Delete
+                                Lead</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Lead Detail Notes -->
+            <div class="col-12">
+                <h1 class="display-4">lead-detail-notes.html</h1>
+                <div class="d-flex justify-content-around align-items-center">
+
+                    <div class="dropdown show">
+                        <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                                class="far fa-bars"></i></span>
+                        <div class="dropdown-menu show" x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-105px, 28px, 0px);">
+                            <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal"
+                                data-target="#editLead">
+                                Edit Lead</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Delete
+                                Lead</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Lead Detail -->
+            <div class="col-12">
+                <h1 class="display-4">lead-detail.html</h1>
+                <div class="d-flex justify-content-around align-items-center">
+                    <div class="dropdown show">
+                        <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                                class="far fa-bars"></i></span>
+                        <div class="dropdown-menu show" x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-105px, 28px, 0px);">
+                            <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal"
+                                data-target="#editLead">
+                                Edit Lead</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Delete
+                                Lead</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listing Board View -->
+            <div class="col-12">
+                <h1 class="display-4">listing-board-view.html</h1>
+                <div class="d-flex justify-content-around align-items-center">
+                    <div class="dropdown show">
+                        <div class="form-control d-flex align-items-center cursor_pointer" data-toggle="dropdown"
+                            aria-expanded="true">
+                            <i class="fal fa-plus mr-3"></i>
+                            <p class="mb-0 mr-3 pr-3 border_right text-nowrap">Add Lead</p>
+                            <span><i class="fal fa-ellipsis-h"></i></span>
+                        </div>
+                        <div class="dropdown-menu show" x-placement="bottom-start"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 34px, 0px);">
+                            <ul>
+                                <li><a class="dropdown-item " href="#" data-toggle="modal"
+                                        data-target="#quickcreate">Quick
+                                        Create</a></li>
+                                <li><a class="dropdown-item " href="#">Create Lead</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="borad_view_listing w-25">
+                        <li>
+                            <p class="d-flex mb-0 justify-content-between"><b class="color_green">John Doe</b>
+                                <span>
+                                    <i class="far fa-edit cursor_pointer" data-toggle="modal"
+                                        data-target="#editLead"></i>
+                                    <i class="far fa-trash-alt cursor_pointer"></i>
+                                </span>
+                            </p>
+                            <p class="mb-0 text-left">Johndoe@gmail.com</p>
+                            <p class="d-flex mb-0 justify-content-between"><span> 573-649-5781</span>
+                                <span class="color_green font_20">
+                                    95
+                                    <i class="far fa-long-arrow-alt-up"></i>
+                                </span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Listing Board View -->
+            <div class="col-12">
+                <h1 class="display-4">listing.html</h1>
+                <div class="d-flex justify-content-around align-items-center">
+                    <div class="dropdown show">
+                        <div class="form-control d-flex align-items-center cursor_pointer" data-toggle="dropdown"
+                            aria-expanded="true">
+                            <i class="fal fa-plus mr-3"></i>
+                            <p class="mb-0 mr-3 pr-3 border_right text-nowrap">Add Lead</p>
+                            <span><i class="fal fa-ellipsis-h"></i></span>
+                        </div>
+                        <div class="dropdown-menu show" x-placement="bottom-start"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 34px, 0px);">
+                            <ul>
+                                <li><a class="dropdown-item " href="#" data-toggle="modal"
+                                        data-target="#quickcreate">Quick
+                                        Create</a></li>
+                                <li><a class="dropdown-item " href="#">Create Lead</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0);">
+                        <i class="far fa-edit cursor_pointer" data-toggle="modal" data-target="#editLead"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Milestones -->
+            <div class="col-12">
+                <h1 class="display-4">milestones.html</h1>
+                <div class="d-flex justify-content-around align-items-center">
+                    <button class="btn text-nowrap" data-toggle="modal" data-target="#addMilestone1">Add
+                        Milestone 1</button>
+                    <button class="btn text-nowrap" data-toggle="modal" data-target="#addMilestone2">Add
+                        Milestone 2</button>
+                    <button class="btn text-nowrap" data-toggle="modal" data-target="#addMilestone3">Add
+                        Milestone 3</button>
+                    <button class="btn text-nowrap" data-toggle="modal" data-target="#addMilestone4">Add
+                        Milestone 4</button>
+                </div>
+            </div>
+
+            <!-- Notifications -->
+            <div class="col-12">
+                <h1 class="display-4">notifications.html</h1>
+                <div class="d-flex justify-content-around align-items-center">
+
+                    <div class="dropdown show">
+                        <span class="cursor_pointer font_20" data-toggle="dropdown" aria-expanded="true"><i
+                                class="far fa-bars"></i></span>
+                        <div class="dropdown-menu show" x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-105px, 28px, 0px);">
+                            <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal"
+                                data-target="#editLead">
+                                Edit Lead</a>
+                            <a class="dropdown-item" href="javascript:void(0);"> Delete
+                                Lead</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!----------------------------------------- Generic Modals ---------------------------------->
+
+
+            <!-- Dashboard Add Button Modal -->
+            <div class="modal fade" id="add">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Select Status</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6 border_btm">
+                                    <div class="p-3">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1"
+                                                checked="">
+                                            <label class="custom-control-label" for="customCheck1">New</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 border_btm">
+                                    <div class="p-3">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1">Negotiation</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 border_btm">
+                                    <div class="p-3">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1"
+                                                checked="">
+                                            <label class="custom-control-label" for="customCheck1">Pending</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 border_btm">
+                                    <div class="p-3">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1">Closed
+                                                Won</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 border_btm">
+                                    <div class="p-3">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1">Lost</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 border_btm">
+                                    <div class="p-3">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1">Closed
+                                                Lost</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-3">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1">Prospecting</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Dashboard Add Button Modal End -->
+
+            <!-- Select Set Time Modal -->
+            <div id="selectsettime" class="modal fade" role="dialog" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Select Send Time</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="weight_600 mb-1">When do you want to send this email?</p>
+                            <p>Once a contact meets the entry criteria for your automation, you can send your
+                                first email instantly, or you can choose a number of days or hours to wait before
+                                you send.</p>
+
+                            <div class="mt-3 mb-3">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="customRadio5" name="example1">
+                                    <label class="custom-control-label font-weight-normal" for="customRadio5">Send
+                                        the first email instantly</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="customRadio6" name="example1">
+                                    <label class="custom-control-label font-weight-normal" for="customRadio6">Wait
+                                        to send the first email</label>
+                                </div>
+                            </div>
+
+                            <p class="weight_600 mb-1">How long do you want to wait to send the first email?</p>
+                            <p>For example, if a contact enters your series on a Monday, and you send the first
+                                email 3 days later, your contact will receive the email on Thursday.</p>
+
+                            <p class="weight_600 mb-1">Send this email</p>
+                            <div class="row align-items-center">
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control" value="3">
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="select_wrap">
+                                        <select class="form-control">
+                                            <option value="">day(s)</option>
+                                            <option value="">hour(s)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <p class="mb-0">after a contact enters the automation.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Select Set Time Modal End -->
+
+            <!-- Edit Lead Modal -->
+            <div id="editLead" class="modal fade" role="dialog" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Edit Lead</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="email">Contact Name <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control is-invalid" value="">
+                                            <div class="invalid-feedback">
+                                                Please add contact name.
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Company Name <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control" value="Merrymaking">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Suite Number</label>
+                                            <input type="text" class="form-control" value="Wilmington, NC 28403">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Zip / Postal Code <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control" value="28403">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Extension</label>
+                                            <input type="text" class="form-control" value="009">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Website</label>
+                                            <input type="text" class="form-control" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Lead Type/Source <span>*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Manual</span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Sales Rep</label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Travis K
+                                                            Cummings</span> <i class="far fa-chevron-down"
+                                                            aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+
+                                        <div class="form-group">
+                                            <label for="email">Title</label>
+                                            <input type="text" class="form-control" value="Abigail Martin">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Address <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control"
+                                                value="4719 Armory Road Wilmington, NC 28403">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>City <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control" value="North Carolins">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Primary Phone Number <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control" value="910-796-5755">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>E-mail Address <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control" value="AbigailEMartin@armyspy.com">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Request</label>
+                                            <input type="text" class="form-control bg_gray">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">New</span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Master Agent</label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Helen D.
+                                                            MacKinney</span> <i class="far fa-chevron-down"
+                                                            aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn cancel_btn" data-dismiss="modal">Cancel</button>
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Edit Lead Modal End -->
+
+            <!-- Add Estimate Modal -->
+            <div id="addestimate" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Add Estimate</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 class="border_btm color_green pb-2">Details</h5>
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="email">Job Name <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control" value="EXPO 2020">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Estimate Status <span class="color_green">*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Draft</span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Expiration Date <span
+                                                    class="color_green">*</span></label>
+                                            <input type="text" class="form-control" value="06/09/2020">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Purchase Order</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Agent <span class="color_green">*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Sylvia J.
+                                                            Taylor</span> <i class="far fa-chevron-down"
+                                                            aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Contact <span class="color_green">*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Erin T.
+                                                            Doran (Royal
+                                                            Empire)</span> <i class="far fa-chevron-down"
+                                                            aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Estimate Date <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control" value="09/11/2019">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Service Date <span class="color_green">*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span
+                                                            class="text-nowrap">09/09/2019</span> <i
+                                                            class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">AP Email</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Sales Rep <span class="color_green">*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Lula M.
+                                                            Faulkner</span> <i class="far fa-chevron-down"
+                                                            aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Customer Memo</label>
+                                    <textarea name="" id="" cols="30" rows="5" class="form-control"
+                                        placeholder="Put this note on every estimate that is sent out to our clients.  They should work with us - we are great."></textarea>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn">Add Estimate</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Add Estimate Modal End-->
+
+            <!-- Add a Questionnaire Modal -->
+            <div id="addaQuestionnaire" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Add Questionnaire</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 class="modal-title color_green">Title</h5>
+                            <div class="d-flex align-items-center mt-2 mb-2">
+                                <input type="text" class="form-control" placeholder="Add Title">
+
+                            </div>
+                            <h6 class="modal-title color_green">Add Question</h6>
+                            <div class="d-flex align-items-center mt-2 mb-3">
+                                <input type="text" class="form-control" placeholder="Add Question">
+                            </div>
+                            <div class="d-flex">
+                                <div class="select_wrap w-75 mb-3 mr-2">
+                                    <select class="form-control">
+                                        <option value="">Primary Question Type</option>
+                                        <option value="">Date/Time</option>
+                                        <option value="">Dropdown</option>
+                                        <option value="">Checkbox</option>
+                                        <option value="">Multiple Choice</option>
+                                        <option value="">Textbox</option>
+                                        <option value="">Comment box</option>
+                                    </select>
+                                </div>
+                                <div class="select_wrap w-25 mb-3">
+                                    <select class="form-control">
+                                        <option value="">Secondary Question Type</option>
+                                        <option value="">Alphabet</option>
+                                        <option value="">Numeric</option>
+                                        <option value="">Alphanumeric</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                <label class="custom-control-label" for="customCheck2">Required</label>
+                            </div>
+                            <div class="row justify-content-end p-2">
+                                <a href="javascript:void(0);">
+                                    <i class="fas fa-plus-circle font_20 mr-3 ml-3 xls_color"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add a Questionnaire Modal End -->
+
+            <!-- Add Scorecard Modal -->
+            <div id="addscorecard" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Add Scorecard</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Scorecard Name (Required)">
+                                </div>
+                                <div class="form-group">
+                                    <label>Section 1</label>
+                                    <input type="text" class="form-control"
+                                        placeholder="Section Name (e.g. Skills / Personality)">
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <div class="custom-control custom-checkbox mt-1">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                <label class="custom-control-label" for="customCheck1"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <div class="date_input">
+                                                <input type="text" class="form-control" placeholder="Search">
+                                                <i class="fas fa-comment"></i>
+                                            </div>
+                                            <button class="btn btn_small mt-3">+ Item</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn_small mt-4">+ Section</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Scorecard Modal End -->
+
+            <!-- Job Listing Settings Modal -->
+            <div id="submissionReceived" class="modal fade" roel="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Submission Received</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <input type="text" class="form-control mb-3" placeholder="Lorem">
+
+                            <div class="select_wrap mb-3">
+                                <select class="form-control">
+                                    <option value="">Select Agent</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </div>
+
+                            <textarea rows="10" class="form-control" placeholder="Body"></textarea>
+
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Job Listing Settings Modal End -->
+
+            <!-- Job Posts Modals -->
+            <div id="editcandidate" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Edit Candidate Details</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="d-flex align-items-center border_btm p-3">
+                            <span class="user_img bg_green text-white mr-3">A</span>
+                            <h6 class="mb-0"><span class="color_green mb-0">+ Upload Profile Photo</span></h6>
+
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="email">Candidate Name</label>
+                                            <input type="text" class="form-control" value="Ali Raza">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Phone Number</label>
+                                            <input type="text" class="form-control" value="1234567890">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Position</label>
+                                            <input type="text" class="form-control" value="QA Analyst">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Assigned By </label>
+                                            <input type="text" class="form-control" value="Faisal">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Mailing Address</label>
+                                            <textarea class="form-control" rows="4"></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <h6 class="font-weight-bold">Candidate Source </h6>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Candidate
+                                                            Source</span> <i class="far fa-chevron-down"
+                                                            aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <h6 class="font-weight-bold">Candidate Source </h6>
+                                            <div class="form-control pt-0 pb-0">
+                                                <ul class="tags_ul">
+                                                    <li>Aesthetic</li>
+                                                    <li>Designing</li>
+                                                    <li>Efficient</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+
+                                        <div class="form-group">
+                                            <label for="email">Email Address</label>
+                                            <input type="text" class="form-control" value="ali@yopmail.com">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Alt Phone Number </label>
+                                            <input type="text" class="form-control" value="Alt Phone Number">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Added By</label>
+                                            <input type="text" class="form-control" value="John">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Applied</span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="editsummary" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Edit Summary</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label>Title </label>
+                                    <input type="text" class="form-control" value="title @ DL">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Summary</label>
+                                    <textarea class="form-control" rows="4">Summary </textarea>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="addsummary" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Add Summary</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label>Title </label>
+                                    <input type="text" class="form-control" value="">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Summary</label>
+                                    <textarea class="form-control" rows="4"> </textarea>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="addexperience" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Add Work Experience</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label>Job Title <span class="color_green">*</span></label>
+                                    <input type="text" class="form-control" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Company Name <span class="color_green">*</span></label>
+                                    <input type="text" class="form-control" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Summary / Description</label>
+                                    <textarea class="form-control" rows="4"> </textarea>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Start Month</label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">02 </span> <i
+                                                            class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Start Year</label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">2018 </span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>End Month</label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">08 </span> <i
+                                                            class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>End Year</label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">2018 </span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="addeducation" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Add Education</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label>School Name <span class="color_green">*</span></label>
+                                    <input type="text" class="form-control" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Field of Study</label>
+                                    <input type="text" class="form-control" value="">
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Start Year</label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">2018 </span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Start Year</label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">2018 </span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="scorecard" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">
+                                <div class="d-flex align-items-center">
+                                    <span class="user_img bg_green text-white mr-3">A</span>
+                                    <div><span class="color_green mb-0">Ali Raza</span>
+                                    </div>
+
+                                </div>
+                            </h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Thoughts on this Candidate?</h6>
+                            <textarea class="form-control" name=""
+                                rows="4">I enjoy my time at school: it is really nice to study, the students are very friendly and ready to help. The atmosphere cannot but make me want to go there every time. I like to receive and deal with challenging tasks. I am a very enthusiastic student and I think this is a strong point of mine.</textarea>
+                            <h6 class="mt-3">Overall Rating?</h6>
+                            <ul id="overall" class="rating_ul">
+                                <li><i class="fas fa-thumbs-down"></i> <i class="fas fa-thumbs-down"></i> Very Poor</li>
+                                <li><i class="fas fa-thumbs-down"></i> Poor</li>
+                                <li class="active"><i class="fas fa-circle"></i></li>
+                                <li><i class="fas fa-thumbs-up"></i> Good</li>
+                                <li><i class="fas fa-thumbs-up"></i> <i class="fas fa-thumbs-up"></i> Very Good</li>
+                            </ul>
+                            <h6 class="mt-3">Soft Skills</h6>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <p class="mb-0">Social Skills</p>
+                                <ul class="rating_ul">
+                                    <li><i class="fas fa-thumbs-down"></i> <i class="fas fa-thumbs-down"></i></li>
+                                    <li><i class="fas fa-thumbs-down"></i> </li>
+                                    <li class="active"><i class="fas fa-circle"></i></li>
+                                    <li><i class="fas fa-thumbs-up"></i> </li>
+                                    <li><i class="fas fa-thumbs-up"></i> <i class="fas fa-thumbs-up"></i></li>
+                                </ul>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <p class="mb-0">Creative Thinking</p>
+                                <ul class="rating_ul">
+                                    <li><i class="fas fa-thumbs-down"></i> <i class="fas fa-thumbs-down"></i></li>
+                                    <li><i class="fas fa-thumbs-down"></i> </li>
+                                    <li class="active"><i class="fas fa-circle"></i></li>
+                                    <li><i class="fas fa-thumbs-up"></i> </li>
+                                    <li><i class="fas fa-thumbs-up"></i> <i class="fas fa-thumbs-up"></i></li>
+                                </ul>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <p class="mb-0">Problem Solving</p>
+                                <ul class="rating_ul">
+                                    <li><i class="fas fa-thumbs-down"></i> <i class="fas fa-thumbs-down"></i></li>
+                                    <li><i class="fas fa-thumbs-down"></i> </li>
+                                    <li class="active"><i class="fas fa-circle"></i></li>
+                                    <li><i class="fas fa-thumbs-up"></i> </li>
+                                    <li><i class="fas fa-thumbs-up"></i> <i class="fas fa-thumbs-up"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="scheduleinterview" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Schedule Candidate Interview</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="p-3 border_btm">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <div class="dropdown w-100 impact_dropdown">
+                                            <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="impact_option"><span class="text-nowrap">09/09/2018 </span>
+                                                    <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                            </div>
+                                            <div class="dropdown-menu">
+                                                <ul>
+                                                    <li><a class="dropdown-item " href="#">2</a></li>
+                                                    <li><a class="dropdown-item " href="#">3</a></li>
+                                                    <li><a class="dropdown-item " href="#">4</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Time</label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">11:00 AM
+                                                        </span> <i class="far fa-chevron-down"
+                                                            aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Duration</label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">30 Min </span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Interviewers </label>
+                                    <input type="text" class="form-control" value="Main Faisal">
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Person / Designation </label>
+                                            <input type="text" class="form-control"
+                                                value="Ali Raza Meeting (QA Analyst)">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Location </label>
+                                            <input type="text" class="form-control" value="Islamabad">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Interview description, including video link if applicable. </label>
+                                    <textarea rows="4" class="form-control"></textarea>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn">Schedule</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="requestscorecards" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Request Scorecards</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="mb-5">
+                                Request that the remaining team members complete
+                                their scorecards?
+                            </p>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn mr-2 bg-danger">No</button>
+                            <button class="btn">Yes</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Job Posts Modals End -->
+
+            <!-- Lead Detail Add Contact / Copy Modals -->
+            <div id="creatopportunity" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Create Opportunity</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+
+                                        <div class="form-group">
+                                            <label>Opportunity Owner <span class="color_green">*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Option</span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Opportunity Name <span
+                                                    class="color_green">*</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Company Contact <span class="color_green">*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Option</span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Agent <span class="color_green">*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Option</span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Sales Representative <span class="color_green">*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Option</span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="email">Job Date <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Closed Date <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Forecast Category <span class="color_green">*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Option</span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Lead Source <span class="color_green">*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Option</span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn cancel_btn" data-dismiss="modal">Cancel</button>
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="selectopportunity" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Select Opportunity</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="pb-1 d-flex border_btm align-items-center justify-content-between overflow">
+                                <div class="d-flex align-items-center">
+                                    <input class="form-control mr-3" type="text" placeholder="Name" />
+                                    <input class="form-control mr-3" type="text" placeholder="Contact" />
+                                    <div class="dropdown w-75 mr-3 impact_dropdown">
+                                        <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="impact_option"><span class="text-nowrap">Agent</span> <i
+                                                    class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                        </div>
+                                        <div class="dropdown-menu">
+                                            <ul>
+                                                <li><a class="dropdown-item " href="#">2</a></li>
+                                                <li><a class="dropdown-item " href="#">3</a></li>
+                                                <li><a class="dropdown-item " href="#">4</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="input-group date_input mr-3">
+                                        <input type="text" class="form-control datetimepicker-input" id="datetimepicker"
+                                            data-toggle="datetimepicker" data-target="#datetimepicker"
+                                            placeholder="Strat Date" />
+                                    </div>
+
+                                    <div class='input-group date_input'>
+                                        <input type="text" class="form-control datetimepicker-input"
+                                            id="datetimepicker5" data-toggle="datetimepicker"
+                                            data-target="#datetimepicker5" placeholder="End Date" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="listing_warp table_overflow">
+                                <table class="table table-bordered listing_table th_bg">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Company/Contact</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Agent</th>
+                                            <th>Booked</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BA for Coke</td>
+                                            <td>ACME Inc/ Stone Gold</td>
+                                            <td>09/09/2019</td>
+                                            <td>12/12/2019</td>
+                                            <td>Stone Gold</td>
+                                            <td>4/10</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Lead Detail Add Contact / Copy Modals End -->
+
+            <!-- Listing Board View Modal -->
+            <div id="quickcreate" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Create Opportunity</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+
+
+                                        <div class="form-group">
+                                            <label for="email"> Name <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Company Name <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Address <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>City <span class="color_green">*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Option</span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="email">Zip/Postal Code <span
+                                                    class="color_green">*</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Primary Phone Number <span
+                                                    class="color_green">*</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email Address <span class="color_green">*</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Lead Type/Source <span class="color_green">*</span></label>
+                                            <div class="dropdown w-100 impact_dropdown">
+                                                <div class="form-control p-0 overflow-hidden" id="impactdropdown"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="impact_option"><span class="text-nowrap">Option</span>
+                                                        <i class="far fa-chevron-down" aria-hidden="true"></i></span>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item " href="#">2</a></li>
+                                                        <li><a class="dropdown-item " href="#">3</a></li>
+                                                        <li><a class="dropdown-item " href="#">4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn cancel_btn" data-dismiss="modal">Cancel</button>
+                            <button class="btn">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Listing Board View Modal End -->
+
+            <!-- Milestones modals -->
+            <div class="modal" id="addMilestone1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Milestone</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <p class="mb-1 text-left font-weight-bold">
+                                Milestone Name
+                            </p>
+                            <input class="form-control" type="text" value="Give this milestone a name" />
+                            <div class="row mt-3">
+                                <!----------------------------------------------------------------------------------------- Column One -->
+                                <div class="col-lg-6">
+                                    <p class="font-weight-bold mb-1 text-left">When is it due?</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class='input-group date_input'>
+                                            <input type="text" class="form-control datetimepicker-input"
+                                                id="datetimepicker5" data-toggle="datetimepicker"
+                                                data-target="#datetimepicker5" placeholder="10/16/2019 5:09 PM" />
+                                            <i class="fal fa-calendar-alt"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-------------------------------------------------------------------------------------- Column One End -->
+                                <!------------------------------------------------------------------------------------------ Column Two -->
+                                <div class="col-lg-6">
+                                    <p class="font-weight-bold mb-1 text-left">Who is responsible?</p>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="dropdown w-100 impact_dropdown">
+                                            <div class="form-control overflow-hidden" id="impactdropdown"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="impact_option">4 <i class="far fa-chevron-down"></i></span>
+                                            </div>
+                                            <div class="dropdown-menu" aria-labelledby="impactdropdown">
+                                                <ul>
+                                                    <li class="border_btm">
+                                                        <a class="dropdown-item" href="#">2</a>
+                                                    </li>
+                                                    <li class="border_btm">
+                                                        <a class="dropdown-item" href="#">3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">4</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1"> Notify by
+                                                email?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-------------------------------------------------------------------------------------- Column Two End -->
+
+                            </div>
+
+
+                            <div class="modal-lower-tabs mt-4 mb-2">
+                                <ul class="middle_tabs border-bottom">
+                                    <li class="active">Description</li>
+                                    <li>Privacy & Followers </li>
+                                    <li>Task Lists</li>
+                                    <li>Tags</li>
+                                </ul>
+                            </div>
+
+                            <!----------------------------------------------------------------------------- Modal Middle Lower Section -->
+
+                            <div class="form-group w-100 mt-3">
+                                <label class="text-left w-100">Provide a Description <span
+                                        class="color_gray">(Optional)</span></label>
+                                <textarea rows="10" class="form-control"></textarea>
+                            </div>
+
+                            <!------------------------------------------------------------------------- Modal Middle Lower Section End -->
+
+                        </div>
+
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal">Add Milestone</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="addMilestone2">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Milestone</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <p class="mb-1 text-left font-weight-bold">
+                                Milestone Name
+                            </p>
+                            <input class="form-control" type="text" value="Give this milestone a name" />
+                            <div class="row mt-3">
+                                <!----------------------------------------------------------------------------------------- Column One -->
+                                <div class="col-lg-6">
+                                    <p class="font-weight-bold mb-1 text-left">When is it due?</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class='input-group date_input'>
+                                            <input type="text" class="form-control datetimepicker-input"
+                                                id="datetimepicker5" data-toggle="datetimepicker"
+                                                data-target="#datetimepicker5" placeholder="10/16/2019 5:09 PM" />
+                                            <i class="fal fa-calendar-alt"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-------------------------------------------------------------------------------------- Column One End -->
+                                <!------------------------------------------------------------------------------------------ Column Two -->
+                                <div class="col-lg-6">
+                                    <p class="font-weight-bold mb-1 text-left">Who is responsible?</p>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="dropdown w-100 impact_dropdown">
+                                            <div class="form-control overflow-hidden" id="impactdropdown"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="impact_option">4 <i class="far fa-chevron-down"></i></span>
+                                            </div>
+                                            <div class="dropdown-menu" aria-labelledby="impactdropdown">
+                                                <ul>
+                                                    <li class="border_btm">
+                                                        <a class="dropdown-item" href="#">2</a>
+                                                    </li>
+                                                    <li class="border_btm">
+                                                        <a class="dropdown-item" href="#">3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">4</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1"> Notify by
+                                                email?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-------------------------------------------------------------------------------------- Column Two End -->
+
+                            </div>
+
+
+                            <div class="modal-lower-tabs mt-4 mb-2">
+                                <ul class="middle_tabs border-bottom">
+                                    <li>Description</li>
+                                    <li class="active">Privacy & Followers </li>
+                                    <li>Task Lists</li>
+                                    <li>Tags</li>
+                                </ul>
+                            </div>
+
+                            <!----------------------------------------------------------------------------- Modal Middle Lower Section -->
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <p class="font-weight-bold mb-1 text-left">Who can see it?</p>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="dropdown w-100 impact_dropdown">
+                                            <div class="form-control overflow-hidden" id="impactdropdown"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="impact_option d-flex">
+                                                    <i class="fas fa-lock mr-2"></i>
+                                                    Everybody on project <i class="far fa-chevron-down ml-auto"></i>
+                                                </span>
+                                            </div>
+                                            <div class="dropdown-menu" aria-labelledby="impactdropdown">
+                                                <ul>
+                                                    <li class="border_btm">
+                                                        <a class="dropdown-item" href="#">Option 2</a>
+                                                    </li>
+                                                    <li class="border_btm">
+                                                        <a class="dropdown-item" href="#">Option 3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">Option 4</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="font-weight-bold mb-1 text-left">Who should follow it?</p>
+                                    <input class="form-control" type="text" value="Select People" />
+                                </div>
+                            </div>
+                            <!------------------------------------------------------------------------- Modal Middle Lower Section End -->
+
+                        </div>
+
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal">Add Milestone</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="addMilestone3">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Milestone</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <p class="mb-1 text-left font-weight-bold">
+                                Milestone Name
+                            </p>
+                            <input class="form-control" type="text" value="Give this milestone a name" />
+                            <div class="row mt-3">
+                                <!----------------------------------------------------------------------------------------- Column One -->
+                                <div class="col-lg-6">
+                                    <p class="font-weight-bold mb-1 text-left">When is it due?</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class='input-group date_input'>
+                                            <input type="text" class="form-control datetimepicker-input"
+                                                id="datetimepicker5" data-toggle="datetimepicker"
+                                                data-target="#datetimepicker5" placeholder="10/16/2019 5:09 PM" />
+                                            <i class="fal fa-calendar-alt"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-------------------------------------------------------------------------------------- Column One End -->
+                                <!------------------------------------------------------------------------------------------ Column Two -->
+                                <div class="col-lg-6">
+                                    <p class="font-weight-bold mb-1 text-left">Who is responsible?</p>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="dropdown w-100 impact_dropdown">
+                                            <div class="form-control overflow-hidden" id="impactdropdown"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="impact_option">4 <i class="far fa-chevron-down"></i></span>
+                                            </div>
+                                            <div class="dropdown-menu" aria-labelledby="impactdropdown">
+                                                <ul>
+                                                    <li class="border_btm">
+                                                        <a class="dropdown-item" href="#">2</a>
+                                                    </li>
+                                                    <li class="border_btm">
+                                                        <a class="dropdown-item" href="#">3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">4</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1"> Notify by
+                                                email?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-------------------------------------------------------------------------------------- Column Two End -->
+
+                            </div>
+
+
+                            <div class="modal-lower-tabs mt-4 mb-2">
+                                <ul class="middle_tabs border-bottom">
+                                    <li>Description</li>
+                                    <li>Privacy & Followers </li>
+                                    <li class="active">Task Lists</li>
+                                    <li>Tags</li>
+                                </ul>
+                            </div>
+
+                            <!----------------------------------------------------------------------------- Modal Middle Lower Section -->
+                            <div class="form-group w-100 mt-3">
+                                <label class="w-100 text-left">Select multiple task lists to attach to this
+                                    milestone</label>
+                                <input type="text" class="form-control w-50" value="None Selected...">
+                            </div>
+                            <!------------------------------------------------------------------------- Modal Middle Lower Section End -->
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal">Add Milestone</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="addMilestone4">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h5 class="modal-title color_green">Milestone</h5>
+                            <button class="close" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <p class="mb-1 text-left font-weight-bold">
+                                Milestone Name
+                            </p>
+                            <input class="form-control" type="text" value="Give this milestone a name" />
+                            <div class="row mt-3">
+                                <!----------------------------------------------------------------------------------------- Column One -->
+                                <div class="col-lg-6">
+                                    <p class="font-weight-bold mb-1 text-left">When is it due?</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class='input-group date_input'>
+                                            <input type="text" class="form-control datetimepicker-input"
+                                                id="datetimepicker5" data-toggle="datetimepicker"
+                                                data-target="#datetimepicker5" placeholder="10/16/2019 5:09 PM" />
+                                            <i class="fal fa-calendar-alt"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-------------------------------------------------------------------------------------- Column One End -->
+                                <!------------------------------------------------------------------------------------------ Column Two -->
+                                <div class="col-lg-6">
+                                    <p class="font-weight-bold mb-1 text-left">Who is responsible?</p>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="dropdown w-100 impact_dropdown">
+                                            <div class="form-control overflow-hidden" id="impactdropdown"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="impact_option">4 <i class="far fa-chevron-down"></i></span>
+                                            </div>
+                                            <div class="dropdown-menu" aria-labelledby="impactdropdown">
+                                                <ul>
+                                                    <li class="border_btm">
+                                                        <a class="dropdown-item" href="#">2</a>
+                                                    </li>
+                                                    <li class="border_btm">
+                                                        <a class="dropdown-item" href="#">3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">4</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1"> Notify by
+                                                email?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-------------------------------------------------------------------------------------- Column Two End -->
+
+                            </div>
+
+
+                            <div class="modal-lower-tabs mt-4 mb-2">
+                                <ul class="middle_tabs border-bottom">
+                                    <li>Description</li>
+                                    <li>Privacy & Followers </li>
+                                    <li>Task Lists</li>
+                                    <li class="active">Tags</li>
+                                </ul>
+                            </div>
+
+                            <!----------------------------------------------------------------------------- Modal Middle Lower Section -->
+                            <div class="form-group">
+                                <label for="" class="w-100 text-left">Company Industry (Select upto 3)</label>
+                                <div class="form-control pt-0 pb-0">
+                                    <ul class="tags_ul">
+                                        <li><i class="far fa-check"></i> Computer Software</li>
+                                        <li class="bg-white color_green">+ Add Company Industry</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!------------------------------------------------------------------------- Modal Middle Lower Section End -->
+
+                        </div>
+
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal">Add Milestone</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Milestones modals End-->
+
+        </div>
+    </div>
+
+    <div class="popups_footer">
+
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        ScrollOut();
+    </script>
+
+</body>
+
+</html>

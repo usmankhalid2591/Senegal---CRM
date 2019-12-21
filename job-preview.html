@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+   <link href="css/style.css" rel="stylesheet" type="text/css">
+   <link href="fonts/css/all.css" rel="stylesheet" type="text/css">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+   <title>Job Preview</title>
+</head>
+
+<body>
+<div class="job_preview_head bg_gray p-4 text-center">
+   <h2 class="color_green">QA Analyst</h2>
+   <p class="font_20"><span class="mr-3"><i class="fas fa-map-marker-alt"></i> Iclamabad, PK</span> 
+      <span class="mr-3"><i class="fas fa-building"></i> Full-Time</span>
+      <span class="mr-3"><i class="fas fa-building"></i> QA</span></p>
+</div>
+<div class="job_preview_sec p-3">
+      <h5 class="color_green weight_600 border_btm pb-2 d-flex align-items-center justify-content-between">
+         Hiring Team <button class="btn">Apply To Position</button></h5>
+         <p class="mb-5">
+               We are looking for a Quality Assurance (QA) engineer who will manage exploratory and automated tests to ensure product quality. You will design and implement tests, debug and define 
+               corrective actions, review system requirements and track quality assurance metrics (e.g. defect densities and open defect counts). Besides, you should monitor all stages of software 
+               development to identify and resolve system malfunctions to meet quality standards.<br/><br/>
+               
+               We expect you to be able to build consistent and efficient tests delivering them in-time. You should also hold an engineering background and enjoy providing end-to-end solutions to 
+               software quality problems.
+         </p>
+         <div class="row">
+            <div class="col-lg-6">
+                  <h5 class="color_green weight_600 border_btm pb-2">QA Engineer Responsibilities are: </h5>
+                  <ul class="job_preview_ul">
+                     <li>
+                           Prepare detailed, comprehensive and well-structured test plans and test cases
+                     </li>
+                     <li>
+                           Review requirements, specifications and technical design documents to provide timely and meaningful feedback
+                     </li>
+                     <li>
+                           Plan and coordinate testing activities, thoroughly identifying and documenting bugs
+                     </li>
+                     <li>
+                           Build and execute automation scripts using open source tools
+                     </li>
+                     <li>
+                           Organize testing processes for new and existing products to meet client needs
+                     </li>
+                     <li>
+                           Collaborate with internal teams (e.g. developers and product managers) to identify system requirements
+                     </li>
+                     <li>
+                           Review debugging process results
+                     </li>
+                     <li>
+                           Track quality assurance metrics, like defect densities and open defect counts
+                     </li>
+                     <li>
+                           Analyze the causes of non-conforming software and train users to implement solutions
+                     </li>
+                     <li>
+                           Maintain relevant knowledge about new testing tools and test strategies
+                     </li>
+                  </ul>
+            </div>
+            <div class="col-lg-6">
+                  <h5 class="color_green weight_600 border_btm pb-2">QA Engineer requirements are: </h5>
+                  <ul class="job_preview_ul">
+                     <li>
+                           2+ years' experience of working on a QA Engineer position
+                     </li>
+                     <li>
+                           Significant experience of working in software development teams and using software QA methodologies and tools
+                     </li>
+                     <li>
+                           Solid experience in writing clear, concise and comprehensive test plans and test cases
+                     </li>
+                     <li>
+                           Significant experience with both white box and black box testing
+                     </li>
+                     <li>
+                           Experience with automated testing tools
+                     </li>
+                     <li>
+                           Good knowledge of SQL and scripting
+                     </li>
+                     <li>
+                           Understanding of Agile/Scrum development principles
+                     </li>
+                     <li>
+                           Experience with performance and/or security testing will be a bonus
+                     </li>
+                     <li>
+                           BS or MS degree in Computer Science, Engineering or other related area
+                     </li>
+                  </ul>
+
+            </div>
+         </div>
+         <div class="border_top">
+            <button class="btn mt-3 mb-5">Apply To Position</button>
+         </div>
+</div>
+
+
+   <script src="js/jquery-3.4.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script>
+      $(".left_icon").click(function () {
+         $(".main_sec").toggleClass("left_close");
+      });
+
+      $(".right_icon").click(function () {
+         $(".main_sec").toggleClass("right_close");
+         $(".right_sec").toggleClass("right_close");
+      });
+
+      $(function () {
+         var print = function (msg) {
+            alert(msg);
+         };
+
+         var setInvisible = function (elem) {
+            elem.css('visibility', 'hidden');
+         };
+         var setVisible = function (elem) {
+            elem.css('visibility', 'visible');
+         };
+
+         var elem = $("#elem");
+         var items = elem.children();
+
+         // Inserting Buttons
+         elem.prepend('<div id="right-button" style="visibility: hidden;"><a href="javascript:void(0);"><i class="fal fa-angle-left"></i></a></div>');
+         elem.append('  <div id="left-button"><a href="javascript:void(0);"><i class="fal fa-angle-right"></i></a></div>');
+
+         // Inserting Inner
+         items.wrapAll('<div id="inner" />');
+
+         // Inserting Outer
+         elem.find('#inner').wrap('<div id="outer"/>');
+
+         var outer = $('#outer');
+
+         var updateUI = function () {
+            var maxWidth = outer.outerWidth(true);
+            var actualWidth = 0;
+            $.each($('#inner >'), function (i, item) {
+               actualWidth += $(item).outerWidth(true);
+            });
+
+            if (actualWidth <= maxWidth) {
+               setVisible($('#left-button'));
+            }
+         };
+         updateUI();
+
+         $('#right-button').click(function () {
+            var leftPos = outer.scrollLeft();
+            outer.animate({
+               scrollLeft: leftPos - 200
+            }, 800, function () {
+               if ($('#outer').scrollLeft() <= 0) {
+                  setInvisible($('#right-button'));
+               }
+            });
+         });
+
+         $('#left-button').click(function () {
+            setVisible($('#right-button'));
+            var leftPos = outer.scrollLeft();
+            outer.animate({
+               scrollLeft: leftPos + 200
+            }, 800);
+         });
+
+         $(window).resize(function () {
+            updateUI();
+         });
+      });
+
+      $(document).ready(function () {
+         $('[data-toggle="tooltip"]').tooltip();
+      });
+   </script>
+
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+   <link href="css/style.css" rel="stylesheet" type="text/css">
+   <link href="fonts/css/all.css" rel="stylesheet" type="text/css">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="css/style-new.css">
+   <title>Comiccon</title>
+</head>
+
+<body class="bg_gray overflow-auto" cz-shortcut-listen="true">
+   <header class="p-2 text-center">
+      <img src="image/logo-front.svg" alt="">
+   </header>
+   <section>
+
+      <div class="p-3 m-4 bg-white">
+         <h6 class="weight_600 border_btm d-block pb-3">ComicCons</h6>
+
+         <ul class="comiccon_ul">
+
+            <li>
+               <img src="https://source.unsplash.com/random/250x250" class="img-fluid" alt="">
+               <div class="comiccon_overlay">
+                  John Doe
+               </div>
+            </li>
+            <li>
+               <img src="https://source.unsplash.com/random/250x250" class="img-fluid" alt="">
+               <div class="comiccon_overlay">
+                  John Doe
+               </div>
+            </li>
+
+            <li>
+               <img src="https://source.unsplash.com/random/250x250" class="img-fluid" alt="">
+               <div class="comiccon_overlay">
+                  John Doe
+               </div>
+            </li>
+
+            <li>
+               <img src="https://source.unsplash.com/random/250x250" class="img-fluid" alt="">
+               <div class="comiccon_overlay">
+                  John Doe
+               </div>
+            </li>
+
+            <li>
+               <img src="https://source.unsplash.com/random/250x250" class="img-fluid" alt="">
+               <div class="comiccon_overlay">
+                  John Doe
+               </div>
+            </li>
+
+            <li>
+               <img src="https://source.unsplash.com/random/250x250" class="img-fluid" alt="">
+               <div class="comiccon_overlay">
+                  John Doe
+               </div>
+            </li>
+
+            <li>
+               <img src="https://source.unsplash.com/random/250x250" class="img-fluid" alt="">
+               <div class="comiccon_overlay">
+                  John Doe
+               </div>
+            </li>
+
+            <li>
+               <img src="https://source.unsplash.com/random/250x250" class="img-fluid" alt="">
+               <div class="comiccon_overlay">
+                  John Doe
+               </div>
+            </li>
+
+            <li>
+               <img src="https://source.unsplash.com/random/250x250" class="img-fluid" alt="">
+               <div class="comiccon_overlay">
+                  John Doe
+               </div>
+            </li>
+
+            <li>
+               <img src="https://source.unsplash.com/random/250x250" class="img-fluid" alt="">
+               <div class="comiccon_overlay">
+                  John Doe
+               </div>
+            </li>
+
+            <li>
+               <img src="https://source.unsplash.com/random/250x250" class="img-fluid" alt="">
+               <div class="comiccon_overlay">
+                  John Doe
+               </div>
+            </li>
+
+            <li>
+               <img src="https://source.unsplash.com/random/250x250" class="img-fluid" alt="">
+               <div class="comiccon_overlay">
+                  John Doe
+               </div>
+            </li>
+
+
+
+         </ul>
+
+      </div>
+   </section>
+
+
+
+   <script src="js/jquery-3.4.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script>
+      $(".left_icon").click(function () {
+         $(".main_sec").toggleClass("left_close");
+      });
+      $(".right_icon").click(function () {
+         $(".main_sec").toggleClass("right_close");
+         $(".right_sec").toggleClass("right_close");
+      });
+      $(function () {
+         var print = function (msg) {
+            alert(msg);
+         };
+         var setInvisible = function (elem) {
+            elem.css('visibility', 'hidden');
+         };
+         var setVisible = function (elem) {
+            elem.css('visibility', 'visible');
+         };
+         var elem = $("#elem");
+         var items = elem.children();
+         // Inserting Buttons
+         // elem.prepend('<div id="right-button" style="visibility: hidden;"><a href="javascript:void(0);"><i class="fal fa-angle-left"></i></a></div>');
+         // elem.append('  <div id="left-button"><a href="javascript:void(0);"><i class="fal fa-angle-right"></i></a></div>');
+         // Inserting Inner
+         items.wrapAll('<div id="inner" />');
+         // Inserting Outer
+         elem.find('#inner').wrap('<div id="outer"/>');
+         var outer = $('#outer');
+         var updateUI = function () {
+            var maxWidth = outer.outerWidth(true);
+            var actualWidth = 0;
+            $.each($('#inner >'), function (i, item) {
+               actualWidth += $(item).outerWidth(true);
+            });
+            if (actualWidth <= maxWidth) {
+               setVisible($('#left-button'));
+            }
+         };
+         updateUI();
+         $('#right-button').click(function () {
+            var leftPos = outer.scrollLeft();
+            outer.animate({
+               scrollLeft: leftPos - 200
+            }, 800, function () {
+               if ($('#outer').scrollLeft() <= 0) {
+                  setInvisible($('#right-button'));
+               }
+            });
+         });
+         $('#left-button').click(function () {
+            setVisible($('#right-button'));
+            var leftPos = outer.scrollLeft();
+            outer.animate({
+               scrollLeft: leftPos + 200
+            }, 800);
+         });
+         $(window).resize(function () {
+            updateUI();
+         });
+      });
+      $(document).ready(function () {
+         $('[data-toggle="tooltip"]').tooltip();
+      });
+   </script>
+   <!-- Code injected by live-server -->
+   <script type="text/javascript">
+      // <![CDATA[  <-- For SVG support
+      if ('WebSocket' in window) {
+         (function () {
+            function refreshCSS() {
+               var sheets = [].slice.call(document.getElementsByTagName("link"));
+               var head = document.getElementsByTagName("head")[0];
+               for (var i = 0; i < sheets.length; ++i) {
+                  var elem = sheets[i];
+                  var parent = elem.parentElement || head;
+                  parent.removeChild(elem);
+                  var rel = elem.rel;
+                  if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                     var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                     elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                  }
+                  parent.appendChild(elem);
+               }
+            }
+            var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+            var address = protocol + window.location.host + window.location.pathname + '/ws';
+            var socket = new WebSocket(address);
+            socket.onmessage = function (msg) {
+               if (msg.data == 'reload') window.location.reload();
+               else if (msg.data == 'refreshcss') refreshCSS();
+            };
+            if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+               console.log('Live reload enabled.');
+               sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+            }
+         })();
+      }
+      else {
+         console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+      }
+	// ]]>
+   </script>
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+   <link href="css/style.css" rel="stylesheet" type="text/css">
+   <link href="fonts/css/all.css" rel="stylesheet" type="text/css">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+   <title>Signup</title>
+</head>
+
+<body>
+   <div class="d-flex">
+      <div class="form_wrap w-50">
+         <div class="form_box">
+            <form>
+               <div class="form_top mt-5 mb-3">
+                  <img src="image/Logo.svg">
+                  <h3 class="mt-5">Welcome</h3>
+                  <p>to Senegal Demo</p>
+               </div>
+               <div class="form-group">
+                  <label for="email">Full Name</label>
+                  <input type="email" class="form-control" id="email">
+               </div>
+               <div class="form-group">
+                  <label for="email">E-mail</label>
+                  <input type="email" class="form-control" id="email">
+               </div>
+               <div class="form-group">
+                  <label for="email">Confirm E-mail</label>
+                  <input type="email" class="form-control" id="email">
+               </div>
+               <div class="form-group">
+                  <label for="pwd">Password:</label>
+                  <input type="password" class="form-control" id="pwd">
+               </div>
+               <div class="form-group">
+                  <label for="pwd">Confirm Password:</label>
+                  <input type="password" class="form-control" id="pwd">
+               </div>
+               <div class="form-group d-flex justify-content-between">
+                  <div class="custom-control custom-checkbox">
+                     <input type="checkbox" class="custom-control-input" id="customCheck1">
+                     <label class="custom-control-label" for="customCheck1">
+                        I have read and agree with the<a href="javascript:void(0)" class="color_green"> Privacy
+                           Statement</a></label>
+                  </div>
+
+               </div>
+               <button type="submit" class="btn w-100">Login</button>
+               <p class="mt-3 mb-0">Have an account ? <a href="javascript:void(0);" class="color_green">Back to login
+                  </a></p>
+            </form>
+         </div>
+      </div>
+      <div class="bg_green w-50 vh-100"></div>
+   </div>
+   <script src="js/jquery-3.4.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script>
+      $(".left_icon").click(function () {
+         $(".main_sec").toggleClass("left_close");
+      });
+
+      $(".right_icon").click(function () {
+         $(".main_sec").toggleClass("right_close");
+         $(".right_sec").toggleClass("right_close");
+      });
+
+      $(function () {
+         var print = function (msg) {
+            alert(msg);
+         };
+
+         var setInvisible = function (elem) {
+            elem.css('visibility', 'hidden');
+         };
+         var setVisible = function (elem) {
+            elem.css('visibility', 'visible');
+         };
+
+         var elem = $("#elem");
+         var items = elem.children();
+
+         // Inserting Buttons
+         elem.prepend('<div id="right-button" style="visibility: hidden;"><a href="javascript:void(0);"><i class="fal fa-angle-left"></i></a></div>');
+         elem.append('  <div id="left-button"><a href="javascript:void(0);"><i class="fal fa-angle-right"></i></a></div>');
+
+         // Inserting Inner
+         items.wrapAll('<div id="inner" />');
+
+         // Inserting Outer
+         elem.find('#inner').wrap('<div id="outer"/>');
+
+         var outer = $('#outer');
+
+         var updateUI = function () {
+            var maxWidth = outer.outerWidth(true);
+            var actualWidth = 0;
+            $.each($('#inner >'), function (i, item) {
+               actualWidth += $(item).outerWidth(true);
+            });
+
+            if (actualWidth <= maxWidth) {
+               setVisible($('#left-button'));
+            }
+         };
+         updateUI();
+
+         $('#right-button').click(function () {
+            var leftPos = outer.scrollLeft();
+            outer.animate({
+               scrollLeft: leftPos - 200
+            }, 800, function () {
+               if ($('#outer').scrollLeft() <= 0) {
+                  setInvisible($('#right-button'));
+               }
+            });
+         });
+
+         $('#left-button').click(function () {
+            setVisible($('#right-button'));
+            var leftPos = outer.scrollLeft();
+            outer.animate({
+               scrollLeft: leftPos + 200
+            }, 800);
+         });
+
+         $(window).resize(function () {
+            updateUI();
+         });
+      });
+
+      $(document).ready(function () {
+         $('[data-toggle="tooltip"]').tooltip();
+      });
+   </script>
+
+</body>
+
+</html>
