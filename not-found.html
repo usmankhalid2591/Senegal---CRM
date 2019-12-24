@@ -69,8 +69,8 @@
             display: -ms-grid;
             display: grid;
             height: 100vh;
-            -ms-grid-rows: 25% 1fr 1fr 1fr 25%;
-            grid-template-rows: 25% 1fr 1fr 1fr 25%;
+            -ms-grid-rows: 3fr 1fr 1fr 1fr 3fr;
+            grid-template-rows: 3fr 1fr 1fr 1fr 3fr;
             grid-template-areas:
                 "."
                 "not-found"
@@ -112,6 +112,58 @@
             -ms-flex-pack: center;
             justify-content: center;
             font-size: 25px;
+        }
+
+        @media screen and (max-width: 1366px) {
+
+            .left__image {
+                width: 300px !important;
+            }
+
+            .right__not-found {
+                font-size: 70px !important;
+            }
+
+            .right__text {
+                font-size: 25px !important;
+            }
+
+            .not-found-page .right .right__button .btn {
+            width: 170px !important;
+            height: 40px !important;
+            font-size: 22px !important;
+        }
+
+        }
+
+        @media screen and (max-width: 1024px) {
+
+            .left__image {
+                width: 250px !important;
+            }
+
+            .right__not-found {
+                font-size: 60px !important;
+            }
+
+            .right__text {
+                font-size: 20px !important;
+            }
+        }
+
+        @media screen and (max-width: 980px) {
+
+            .left__image {
+                width: 200px !important;
+            }
+
+            .right__not-found {
+                font-size: 50px !important;
+            }
+
+            .right__text {
+                font-size: 16px !important;
+            }
         }
     </style>
 
