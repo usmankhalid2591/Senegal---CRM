@@ -332,6 +332,22 @@ CSS for talent-detail-with-jquery-plugin.html
   border: 1px solid #d3d3d3;
 }
 
+#mainNavbar1 .active .flexMenu-popup {
+  display: block !important;
+  z-index: 9999 !important;
+  background: #669900 none repeat scroll 0% 0% !important;
+  position: absolute;
+  width: auto;
+  padding: 0px 15px;
+  text-align: center;
+  top: 50px;
+  border: 1px solid #d3d3d3;
+}
+
+#mainNavbar1 .active .flexMenu-popup a {
+  margin: 0px;
+}
+
 .flexMenu-popup--show {
   right: 50px !important;
 }
@@ -350,7 +366,7 @@ CSS for reports-summation-details.html
 
 .reports-summation-details td {
   border-top: none !important;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .reports-summation-details .graph img {
@@ -371,5 +387,5 @@ CSS for reports-summation-details.html
 }
 
 .reports-summation-details .breadcrumb-item + .breadcrumb-item::before {
-  content: '>';
+  content: ">";
 }
