@@ -8,6 +8,7 @@
    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
    <link href="css/style.css" rel="stylesheet" type="text/css">
    <link href="fonts/css/all.css" rel="stylesheet" type="text/css">
+   <link rel="stylesheet" href="css/style-new.css">
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
    <title>Campaign</title>
 </head>
@@ -128,229 +129,150 @@
       <!--container-->
    </header>
    <section>
-      <div class="main_tabs">
+      <div class="main_tabs p-0">
          <div class="container-fluid">
             <ul>
-               <li class="active">Campaign</li>
-               <li>Social Posting</li>
+               <li class="color_green">
+                  <h4 class="m-0">Create workflow</h4>
+               </li>
             </ul>
          </div>
       </div>
       <div class="main_sec add_campaign_overflow">
          <div class="p-3">
-            <div class="d-flex justify-content-between align-items-center border_btm p-2">
-               <h5 class="color_green weight_600 mb-0">Add Campaign</h5>
-               <div>
-                  <button class="btn mr-2">Set Live</button>
-                  <button class="btn">Save</button>
-               </div>
+            <div id="elem">
+               <ul class="middle_tabs">
+                  <li>Details</li>
+                  <li>Triggers</li>
+                  <li class="active">Conditions</li>
+                  <li>Actions</li>
+               </ul>
             </div>
-            <div class="border_btm pl-2 pr-2 pt-3 pb-3">
-               <div class="row">
-                  <div class="col-lg-8">
-                     <div class="form-group">
-                        <label>What is the name of this campaign? </label>
-                        <input type="text" class="form-control" placeholder="Campaign Name">
-                     </div>
-                  </div>
-               </div>
+            <label for="" class="mt-3">Conditions</label>
+            <div class="custom-control custom-radio">
+               <input type="radio" class="custom-control-input" id="customRadio" name="example1">
+               <label class="custom-control-label font-weight-normal" for="customRadio">All Records</label>
+            </div>
+            <div class="custom-control custom-radio">
+               <input type="radio" class="custom-control-input" id="customRadio" name="example1">
+               <label class="custom-control-label font-weight-normal" for="customRadio">When the records meet the
+                  conditions</label>
+            </div>
+            <div class="custom-control custom-radio">
+               <input type="radio" class="custom-control-input" id="customRadio" name="example1">
+               <label class="custom-control-label font-weight-normal" for="customRadio">When the records do not meet
+                  the conditions</label>
             </div>
 
-            <div class="border_btm pl-2 pr-2 pt-3 pb-3">
-               <p>When will your contacts enter the campaign?</p>
-               <label class="text-uppercase">ENTRY CRITERIA </label>
-               <div class="row">
-                  <div class="col-lg-4">
-                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="The first time a contact">
-                     </div>
-                  </div>
-                  <div class="col-lg-4">
-                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Is added to a list">
-                     </div>
-                  </div>
-                  <div class="col-lg-4">
-                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="All contacts">
-                     </div>
-                  </div>
-               </div>
-               <p>Specify the conditions when your workflow will be automated</p>
-               <label for="" class="text-uppercase">Specify Conditions</label>
-               <div class="custom-control custom-radio">
-                  <input type="radio" class="custom-control-input" id="customRadio" name="example1">
-                  <label class="custom-control-label font-weight-normal" for="customRadio">All Records</label>
-               </div>
-               <div class="custom-control custom-radio">
-                  <input type="radio" class="custom-control-input" id="customRadio" name="example1">
-                  <label class="custom-control-label font-weight-normal" for="customRadio">When the records meet the
-                     conditions</label>
-               </div>
-               <div class="custom-control custom-radio">
-                  <input type="radio" class="custom-control-input" id="customRadio" name="example1">
-                  <label class="custom-control-label font-weight-normal" for="customRadio">When the records do not meet
-                     the conditions</label>
-               </div>
+            <div class="position-relative border_1px border_r_4px p-3 mt-4">
                <div class="d-flex align-items-center mb-4 mt-4">
                   <p class="mb-0 w_70px mr-3">Select</p>
                   <div class="select_wrap w-15 mr-3">
-                        <select class="form-control">
-                           <option value="">Module</option>
-                           <option value="">1</option>
-                           <option value="">2</option>
-                           <option value="">3</option>
-                        </select>
+                     <select class="form-control">
+                        <option value="">Module</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                     </select>
                   </div>
                </div>
-               
+   
                <div class="d-flex align-items-center mb-4">
                   <p class="mb-0 w_70px mr-3">If</p>
                   <div class="select_wrap w-15 mr-3">
-                        <select class="form-control">
-                           <option value="">Module</option>
-                           <option value="">1</option>
-                           <option value="">2</option>
-                           <option value="">3</option>
-                        </select>
+                     <select class="form-control">
+                        <option value="">Module</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                     </select>
                   </div>
                   <input type="text" class="form-control w-15 mr-3" placeholder="is equal to">
                   <input type="text" class="form-control w-15 mr-3" placeholder="Sundas">
                   <i class="fas fa-minus-circle font_20 pdf_color"></i>
                </div>
 
+            </div>
+
+            <div class="position-relative border_1px border_r_4px p-3 mt-4">
                <div class="d-flex align-items-center mb-4 mt-4">
-                     <p class="mb-0 w_70px mr-3"></p>
-                     <div class="select_wrap w-15 mr-3">
-                           <select class="form-control">
-                              <option value="">Or</option>
-                              <option value="">1</option>
-                              <option value="">2</option>
-                              <option value="">3</option>
-                           </select>
-                     </div>
+                  <p class="mb-0 w_70px mr-3">Select</p>
+                  <div class="select_wrap w-15 mr-3">
+                     <select class="form-control">
+                        <option value="">Module</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                     </select>
                   </div>
-                  <div class="d-flex align-items-center mb-4 mt-4">
-                        <p class="mb-0 w_70px mr-3">Select</p>
-                        <div class="select_wrap w-15 mr-3">
-                              <select class="form-control">
-                                 <option value="">Module</option>
-                                 <option value="">1</option>
-                                 <option value="">2</option>
-                                 <option value="">3</option>
-                              </select>
-                        </div>
-                     </div>
-
-                     <div class="d-flex align-items-center mb-4">
-                           <p class="mb-0 w_70px mr-3">If</p>
-                           <div class="select_wrap w-15 mr-3">
-                                 <select class="form-control">
-                                    <option value="">Created Date</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                 </select>
-                           </div>
-                           <input type="text" class="form-control w-15 mr-3" placeholder="is Between">
-                           <input type="text" class="form-control w-15 mr-3" placeholder="11/11/2019">
-                           <p class="mb-0 mr-3">to</p>
-                           <input type="text" class="form-control w-15 mr-3" placeholder="11/11/2019">
-                           <i class="fas fa-minus-circle font_20 pdf_color"></i>
-                        </div>
-
-                        <div class="d-flex align-items-center mb-4 mt-4">
-                              <p class="mb-0 w_70px mr-3"></p>
-                              <div class="select_wrap w-15 mr-3">
-                                    <select class="form-control">
-                                       <option value="">Or</option>
-                                       <option value="">1</option>
-                                       <option value="">2</option>
-                                       <option value="">3</option>
-                                    </select>
-                              </div>
-                           </div>
-                           <div class="d-flex align-items-center mb-4 mt-4">
-                                 <p class="mb-0 w_70px mr-3">Select</p>
-                                 <div class="select_wrap w-15 mr-3">
-                                       <select class="form-control">
-                                          <option value="">Module</option>
-                                          <option value="">1</option>
-                                          <option value="">2</option>
-                                          <option value="">3</option>
-                                       </select>
-                                 </div>
-                              </div>
-                              <div class="d-flex align-items-center mb-4">
-                                    <p class="mb-0 w_70px mr-3">If</p>
-                                    <div class="select_wrap w-15 mr-3">
-                                          <select class="form-control">
-                                             <option value="">Amount</option>
-                                             <option value="">1</option>
-                                             <option value="">2</option>
-                                             <option value="">3</option>
-                                          </select>
-                                    </div>
-                                    <input type="text" class="form-control w-15 mr-3" placeholder="is equal to">
-                                    <input type="text" class="form-control w-15 mr-3" placeholder="50">
-                                    <i class="fas fa-minus-circle font_20 pdf_color"></i>
-                                    <i class="fas fa-plus-circle font_20 mr-3 ml-3 xls_color"></i>
-                                 </div>
-
+               </div>
+   
+               <div class="d-flex align-items-center mb-4">
+                  <p class="mb-0 w_70px mr-3">If</p>
+                  <div class="select_wrap w-15 mr-3">
+                     <select class="form-control">
+                        <option value="">Created Date</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                     </select>
+                  </div>
+                  <input type="text" class="form-control w-15 mr-3" placeholder="is Between">
+                  <input type="text" class="form-control w-15 mr-3" placeholder="11/11/2019">
+                  <p class="mb-0 mr-3">to</p>
+                  <input type="text" class="form-control w-15 mr-3" placeholder="11/11/2019">
+                  <i class="fas fa-minus-circle font_20 pdf_color"></i>
+               </div>
+   
                
-
-            </div>
-            <div class="border_btm pl-2 pr-2 pt-3 pb-3">
-               <p>When will your contacts leave the campaign?</p>
-               <label for="" class="text-uppercase">EXIT CRITERIA</label>
-               <div class="border_1px border_r_4px p-3">
-                     <div class="custom-control custom-radio">
-                           <input type="radio" class="custom-control-input" id="customRadio1" name="example1">
-                           <label class="custom-control-label font-weight-normal" for="customRadio1"><span class="color_gray"> have received all emails in the </span>campaign.</label>
-                        </div>
-                     <div class="custom-control custom-radio">
-                           <input type="radio" class="custom-control-input" id="customRadio1" name="example1">
-                           <label class="custom-control-label font-weight-normal" for="customRadio1"><span class="color_gray">Contacts no longer meet the entry criteria. </span></label>
-                        </div>
+               
+               <div class="switch-toggle toggle_condition_campaign">
+                  <input id="na-1" name="state-d-1" type="radio" checked />
+                  <label for="na-1" onclick="">And</label>
+   
+                  <input id="off-1" name="state-d-1" type="radio" />
+                  <label for="off-1" onclick="">Or</label>
                </div>
             </div>
-            <div class="border_btm pl-2 pr-2 pt-3 pb-3">
-               <p>What email(s) are included in your campaign?</p>
-               <p class="mb-0 color_gray">
-                     You can choose to send a single message or create a series of messages to be sent at time intervals you define.
-               </p>
-            </div>
 
-            <div class="send_email_box text-center mt-3">
-               <div class="first_mail_box">
-                  <p class="mb-0">Send the first email instantly</p>
-                  <i class="far fa-pen color_green" data-toggle="modal" data-target="#selectsettime"></i>
-                  <div class="down_line"><i class="fas fa-caret-down"></i></div>
-               </div>
-               <div class="email_content_box">
-                     <div class="email_numbr">
-                        <p>EMAIL 1</p>
-                     </div>
-                  <div class="d-flex p-4 align-items-center justify-content-between w-100">
-                     <div class="d-inline-flex align-items-center">
-                        <div class="add_email_content mr-4">
-                           Add Email Content
-                        </div>
-                        <div>
-                              <p>Subject: <span class="color_green ml-3">Welcome to Senegal Software</span></p>
-                              <p class="mb-0">From Sender : <span class="color_green ml-3">johndoe@senegal.com</span></p>
-                        </div>
-                     </div>
-                     <div>
-                           <i class="far fa-pen color_green mr-3 cursor_pointer"></i>
-                           <i class="far fa-trash-alt color_green mr-3 cursor_pointer"></i>
-                     </div>
+            <div class="position-relative border_1px border_r_4px p-3 mt-4 mb-3">
+               <div class="d-flex align-items-center mb-4 mt-4">
+                  <p class="mb-0 w_70px mr-3">Select</p>
+                  <div class="select_wrap w-15 mr-3">
+                     <select class="form-control">
+                        <option value="">Module</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                     </select>
                   </div>
-
                </div>
-               <button class="btn btn_upload mt-3">Add an Email</button>
+               <div class="d-flex align-items-center mb-4">
+                  <p class="mb-0 w_70px mr-3">If</p>
+                  <div class="select_wrap w-15 mr-3">
+                     <select class="form-control">
+                        <option value="">Amount</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                     </select>
+                  </div>
+                  <input type="text" class="form-control w-15 mr-3" placeholder="is equal to">
+                  <input type="text" class="form-control w-15 mr-3" placeholder="50">
+                  <i class="fas fa-minus-circle font_20 pdf_color"></i>
+                  <i class="fas fa-plus-circle font_20 mr-3 ml-3 xls_color"></i>
+               </div>
+   
+               <div class="switch-toggle toggle_condition_campaign">
+                  <input id="na-2" name="state-d-2" type="radio" checked />
+                  <label for="na-2" onclick="">And</label>
+   
+                  <input id="off-2" name="state-d-2" type="radio" />
+                  <label for="off-2" onclick="">Or</label>
+               </div>
             </div>
-
+            
+            <div class="border_btm"></div>
          </div>
       </div>
    </section>
@@ -367,42 +289,44 @@
             </div>
             <div class="modal-body">
                <p class="weight_600 mb-1">When do you want to send this email?</p>
-               <p>Once a contact meets the entry criteria for your automation, you can send your 
-                     first email instantly, or you can choose a number of days or hours to wait before 
-                     you send.</p>
+               <p>Once a contact meets the entry criteria for your automation, you can send your
+                  first email instantly, or you can choose a number of days or hours to wait before
+                  you send.</p>
 
-                     <div class="mt-3 mb-3">
-                           <div class="custom-control custom-radio">
-                                 <input type="radio" class="custom-control-input" id="customRadio5" name="example1">
-                                 <label class="custom-control-label font-weight-normal" for="customRadio5">Send the first email instantly</label>
-                              </div>
-                              <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" id="customRadio6" name="example1">
-                                    <label class="custom-control-label font-weight-normal" for="customRadio6">Wait to send the first email</label>
-                                 </div>
+               <div class="mt-3 mb-3">
+                  <div class="custom-control custom-radio">
+                     <input type="radio" class="custom-control-input" id="customRadio5" name="example1">
+                     <label class="custom-control-label font-weight-normal" for="customRadio5">Send the first email
+                        instantly</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                     <input type="radio" class="custom-control-input" id="customRadio6" name="example1">
+                     <label class="custom-control-label font-weight-normal" for="customRadio6">Wait to send the first
+                        email</label>
+                  </div>
+               </div>
+
+               <p class="weight_600 mb-1">How long do you want to wait to send the first email?</p>
+               <p>For example, if a contact enters your series on a Monday, and you send the first
+                  email 3 days later, your contact will receive the email on Thursday.</p>
+
+               <p class="weight_600 mb-1">Send this email</p>
+               <div class="row align-items-center">
+                  <div class="col-lg-2">
+                     <input type="text" class="form-control" value="3">
+                  </div>
+                  <div class="col-lg-2">
+                     <div class="select_wrap">
+                        <select class="form-control">
+                           <option value="">day(s)</option>
+                           <option value="">hour(s)</option>
+                        </select>
                      </div>
-
-                     <p class="weight_600 mb-1">How long do you want to wait to send the first email?</p>
-                     <p>For example, if a contact enters your series on a Monday, and you send the first 
-                        email 3 days later, your contact will receive the email on Thursday.</p>
-                        
-                        <p class="weight_600 mb-1">Send this email</p>
-                        <div class="row align-items-center">
-                           <div class="col-lg-2">
-                              <input type="text" class="form-control" value="3">
-                           </div>
-                           <div class="col-lg-2">
-                                 <div class="select_wrap">
-                                       <select class="form-control">
-                                          <option value="">day(s)</option>
-                                          <option value="">hour(s)</option>
-                                       </select>
-                                    </div>
-                           </div>
-                           <div class="col-lg-8">
-                              <p class="mb-0">after a contact enters the automation.</p>
-                           </div>
-                        </div>
+                  </div>
+                  <div class="col-lg-8">
+                     <p class="mb-0">after a contact enters the automation.</p>
+                  </div>
+               </div>
 
             </div>
             <div class="modal-footer">
@@ -439,10 +363,6 @@
 
          var elem = $("#elem");
          var items = elem.children();
-
-         // Inserting Buttons
-         elem.prepend('<div id="right-button" style="visibility: hidden;"><a href="javascript:void(0);"><i class="fal fa-angle-left"></i></a></div>');
-         elem.append('  <div id="left-button"><a href="javascript:void(0);"><i class="fal fa-angle-right"></i></a></div>');
 
          // Inserting Inner
          items.wrapAll('<div id="inner" />');
