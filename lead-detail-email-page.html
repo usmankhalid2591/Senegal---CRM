@@ -553,9 +553,9 @@
                                  <h6 class="mb-0 mr-3">Angeline J. Rice</h6>
                                  <p class="mb-1"><span class="mr-2">to:</span>drlantern@gotbootstrap.com <span
                                        class="color_green ml-2">Details <i class="far fa-chevron-down"></i></span></p>
-                                 <a href="javascript:void(0);" class="color_green" data-toggle="collapse"
-                                    data-target="#emailthread" id="threadWordToggleID" onclick="threadWordToggle()">View
-                                    thread (3)</a>
+                                 <a class="color_green" data-toggle="collapse"
+                                    data-target="#emailthread" id="threadWordToggleID" onclick="threadWordToggler()">View
+                                    thread</a><span class="color_green"> (3)</span>
                               </div>
                            </div>
                            <div class="text-nowrap color_gray">
@@ -664,21 +664,19 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
    <script>
+      
+      
 
-      $(function () {
+      function threadWordToggler(){
+         var threadword = document.getElementById("threadWordToggleID").innerText;
 
-         $("#threadWordToggleID").click(function (e) {
-            console.log(e);
-            var a = $("#threadWordToggleID");
-            console.log(a.text());
-            if ($(a).text() == "View thread (3)") {
-               a.text("Hide");
-            }
-            else {
-               a.text("View thread (3)");
-            }
-         })
-      });
+         if(threadword == "View thread"){
+            document.getElementById("threadWordToggleID").innerHTML = "Hide thread";
+         }else if(threadword == "Hide thread"){
+            document.getElementById("threadWordToggleID").innerHTML = "View thread";
+         }
+      }
+
       function seeMoreSeeLess() {
          var dots = document.getElementById("dots");
          var moreText = document.getElementById("more");
